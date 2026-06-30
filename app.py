@@ -415,7 +415,7 @@ with tab2:
         dfi = df_indiv.copy()
         dfi['po_name'] = dfi.apply(_assign_po, axis=1)
         dfi = dfi.dropna(subset=['po_name'])
-        for (po, sku, stype), grp in dfi.groupby(['po_name','sku','survey_type']):
+        for (po, sku, stype), grp in dfi.groupby(['po_name','sku','survey_type_days']):
             scores = grp['score'].dropna().astype(int).tolist()
             if not scores:
                 continue
