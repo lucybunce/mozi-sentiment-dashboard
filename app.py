@@ -457,11 +457,26 @@ with tab2:
             return 'color: #E67E22; font-weight: 600'
         return 'color: #E74C3C; font-weight: 600'
 
+    # ── SKU filter ────────────────────────────────────────────────────────────
+    all_skus = sorted({sku for _, skus in PO_BATCHES for sku in skus}, key=SCENT_ORDER.index)
+    sku_options = [f'{SCENT_NAMES.get(s, s)} ({s})' for s in all_skus]
+    sku_label_to_code = {f'{SCENT_NAMES.get(s, s)} ({s})': s for s in all_skus}
+
+    selected_labels = st.multiselect(
+        'Filter by scent',
+        options=sku_options,
+        default=sku_options,
+        key='po_sku_filter',
+    )
+    selected_skus = [sku_label_to_code[l] for l in selected_labels] if selected_labels else all_skus
+
     # ── Build table ───────────────────────────────────────────────────────────
     po_rows = []
     for po_name, skus in PO_BATCHES:
         d_from_po, d_to_po = PO_DATE_RANGES[po_name]
         for sku in skus:
+            if sku not in selected_skus:
+                continue
             sub = df_ok[
                 (df_ok['sku'] == sku) &
                 (df_ok['date'].dt.date >= d_from_po) &
@@ -482,7 +497,7 @@ with tab2:
                 '_nps40':     nps40_v,
             })
 
-    df_po = pd.DataFrame(po_rows)
+    df_po = pd.DataFrame(po_rows).reset_index(drop=True)
     display_cols = ['PO Batch','Scent','# Reviews','Avg Rating','NPS 10-Day','NPS 40-Day']
 
     def style_po(df_s):
@@ -497,10 +512,13 @@ with tab2:
             styles.at[i, 'NPS 40-Day'] = color_nps_val(df_po.at[i, '_nps40'])
         return styles
 
-    st.dataframe(
-        df_po[display_cols].style.apply(style_po, axis=None)
-        .set_properties(**{'text-align': 'center'})
-        .set_properties(subset=['PO Batch','Scent'], **{'text-align': 'left'}),
-        use_container_width=True, hide_index=True,
-    )
+    if df_po.empty:
+        st.info('No scents selected.')
+    else:
+        st.dataframe(
+            df_po[display_cols].style.apply(style_po, axis=None)
+            .set_properties(**{'text-align': 'center'})
+            .set_properties(subset=['PO Batch','Scent'], **{'text-align': 'left'}),
+            use_container_width=True, hide_index=True,
+        )
     st.markdown('</div>', unsafe_allow_html=True)
