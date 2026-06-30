@@ -234,8 +234,14 @@ with tab1:
     def color_ss(val):
         if val is None or (isinstance(val, float) and val != val): return ''
         av = abs(val)
-        if av <= 0.25: return 'color: #27AE60; font-weight: 600'
-        if av <= 0.50: return 'color: #E67E22; font-weight: 600'
+        if av <= 0.25: return 'color: #27AE60; font-weight: 600'   # -0.24 to +0.25 → green
+        if av <= 0.50: return 'color: #D4AC0D; font-weight: 600'   # ±0.25–0.50 → yellow
+        return 'color: #E74C3C; font-weight: 600'                  # ±0.51–1.0 → red
+
+    def color_attr(val):
+        if val is None or (isinstance(val, float) and val != val): return ''
+        if val >= 4.0: return 'color: #27AE60; font-weight: 600'
+        if val >= 3.0: return 'color: #E67E22; font-weight: 600'
         return 'color: #E74C3C; font-weight: 600'
 
     def color_nps(val):
@@ -265,6 +271,9 @@ with tab1:
         for i, row in df_s.iterrows():
             styles.at[i, 'Avg Rating']     = color_rating(row['Avg Rating'])
             styles.at[i, 'Scent Strength'] = color_ss(row['Scent Strength'])
+            styles.at[i, 'Scent Appeal']   = color_attr(row['Scent Appeal'])
+            styles.at[i, 'Cleaning Power'] = color_attr(row['Cleaning Power'])
+            styles.at[i, 'Cap/Pouring']    = color_attr(row['Cap/Pouring'])
             # NPS styling — parse back from formatted string
             for col in ['NPS 10-Day','NPS 40-Day']:
                 val_str = str(row[col])
