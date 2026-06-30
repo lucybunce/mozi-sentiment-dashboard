@@ -101,8 +101,30 @@ def load_nps():
     df['sku'] = df['sku'].str.strip().str.upper()
     return df
 
-df_ok  = load_okendo()
-df_nps = load_nps()
+@st.cache_data(ttl=3600)
+def load_nps_individual():
+    path = os.path.join(DATA_DIR, 'nps_individual.csv')
+    if not os.path.exists(path):
+        return pd.DataFrame()
+    df = pd.read_csv(path, parse_dates=['date'])
+    df['sku'] = df['sku'].str.strip().str.upper()
+    df['survey_type'] = df['survey_type'].astype(str)
+    return df
+
+@st.cache_data(ttl=3600)
+def load_nps_po_historical():
+    path = os.path.join(DATA_DIR, 'nps_po_historical.csv')
+    if not os.path.exists(path):
+        return pd.DataFrame()
+    df = pd.read_csv(path)
+    df['sku'] = df['sku'].str.strip().str.upper()
+    df['survey_type_days'] = df['survey_type_days'].astype(str)
+    return df
+
+df_ok       = load_okendo()
+df_nps      = load_nps()
+df_indiv    = load_nps_individual()
+df_hist_nps = load_nps_po_historical()
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 tab1, tab2 = st.tabs(["By Scent", "By Formula (PO Batch)"])
@@ -338,24 +360,80 @@ with tab1:
 with tab2:
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">By Formula (PO Batch)</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Star ratings and NPS broken down by production batch. Historical NPS from Survicate; Omniconvert individual responses pending.</div>', unsafe_allow_html=True)
-
-    st.info("Full By Formula breakdown coming soon — waiting on Omniconvert individual response export. The table below shows Okendo star ratings by batch. NPS columns will populate once individual response data is available.", icon="⏳")
+    st.markdown('<div class="section-sub">Star ratings and NPS by production batch. NPS from Omniconvert (current batch) and Survicate (historical).</div>', unsafe_allow_html=True)
 
     # PO batch definitions
     PO_BATCHES = [
-        ('Jan 18 Stock',                 ['AW','CC','CZ','DP','FC','GH','HR','MM','SD','VM']),
-        ('March Order - 6 Degrees',      ['AW','CC','CZ','DP','GH','HR','SD','VM']),
+        ('Jan 18 Stock',                    ['AW','CC','CZ','DP','FC','GH','HR','MM','SD','VM']),
+        ('March Order - 6 Degrees',         ['AW','CC','CZ','DP','GH','HR','SD','VM']),
         ('January Order - Product Society', ['DP','MM']),
     ]
-
-    # PO date ranges for Okendo matching (approx order dates)
     PO_DATE_RANGES = {
-        'Jan 18 Stock':                  (date(2025,10,1), date(2026,3,14)),
-        'March Order - 6 Degrees':       (date(2026,3,15), date(2099,1,1)),
+        'Jan 18 Stock':                    (date(2025,10,1), date(2026,3,14)),
+        'March Order - 6 Degrees':         (date(2026,3,15), date(2099,1,1)),
         'January Order - Product Society': (date(2026,1,1), date(2026,3,14)),
     }
 
+    # ── NPS lookups ───────────────────────────────────────────────────────────
+    # Live: compute NPS from Omniconvert individual responses, assigning PO by approx order date
+    def _assign_po(row):
+        try:
+            od = (pd.to_datetime(row['date']) - pd.Timedelta(days=int(row['survey_type']))).date()
+        except Exception:
+            return None
+        for po_name, (d_from, d_to) in PO_DATE_RANGES.items():
+            if d_from <= od <= d_to:
+                return po_name
+        return None
+
+    nps_live = {}
+    if not df_indiv.empty:
+        dfi = df_indiv.copy()
+        dfi['po_name'] = dfi.apply(_assign_po, axis=1)
+        dfi = dfi.dropna(subset=['po_name'])
+        for (po, sku, stype), grp in dfi.groupby(['po_name','sku','survey_type']):
+            scores = grp['score'].dropna().astype(int).tolist()
+            if not scores:
+                continue
+            promoters  = sum(1 for s in scores if s >= 9)
+            detractors = sum(1 for s in scores if s <= 6)
+            nps_live[(po, sku, str(stype))] = (
+                round((promoters - detractors) / len(scores) * 100, 1),
+                len(scores),
+            )
+
+    # Historical: pre-aggregated Survicate NPS from nps_po_historical.csv
+    nps_hist = {}
+    if not df_hist_nps.empty:
+        for _, r in df_hist_nps.iterrows():
+            nps_hist[(r['po_name'], r['sku'], str(r['survey_type_days']))] = (
+                float(r['nps']), int(r['n_responses'])
+            )
+
+    def get_nps(po_name, sku, stype):
+        """Return (nps_val, n) — live data takes priority over historical."""
+        key = (po_name, sku, stype)
+        if key in nps_live:
+            return nps_live[key]
+        if key in nps_hist:
+            return nps_hist[key]
+        return None, 0
+
+    def fmt_nps(val, n):
+        if val is None:
+            return '—'
+        return f'{int(val):+d} (n={n})'
+
+    def color_nps_val(val):
+        if val is None:
+            return 'color: #BBB; font-style: italic'
+        if val >= 40:
+            return 'color: #27AE60; font-weight: 600'
+        if val >= 0:
+            return 'color: #E67E22; font-weight: 600'
+        return 'color: #E74C3C; font-weight: 600'
+
+    # ── Build table ───────────────────────────────────────────────────────────
     po_rows = []
     for po_name, skus in PO_BATCHES:
         d_from_po, d_to_po = PO_DATE_RANGES[po_name]
@@ -365,38 +443,40 @@ with tab2:
                 (df_ok['date'].dt.date >= d_from_po) &
                 (df_ok['date'].dt.date <= d_to_po)
             ]
-            n = len(sub)
-            avg_r = round(sub['rating'].mean(), 2) if n else None
+            n_rev = len(sub)
+            avg_r = round(sub['rating'].mean(), 2) if n_rev else None
+            nps10_v, n10 = get_nps(po_name, sku, '10')
+            nps40_v, n40 = get_nps(po_name, sku, '40')
             po_rows.append({
-                'PO Batch': po_name,
-                'SKU': sku,
-                'Scent': SCENT_NAMES.get(sku, sku),
-                '# Reviews': n,
+                'PO Batch':   po_name,
+                'Scent':      SCENT_NAMES.get(sku, sku),
+                '# Reviews':  n_rev,
                 'Avg Rating': f'{avg_r:.2f} ★' if avg_r else '—',
-                'NPS 10-Day': '—',
-                'NPS 40-Day': '—',
+                'NPS 10-Day': fmt_nps(nps10_v, n10),
+                'NPS 40-Day': fmt_nps(nps40_v, n40),
+                '_nps10':     nps10_v,
+                '_nps40':     nps40_v,
             })
 
     df_po = pd.DataFrame(po_rows)
+    display_cols = ['PO Batch','Scent','# Reviews','Avg Rating','NPS 10-Day','NPS 40-Day']
 
     def style_po(df_s):
         styles = pd.DataFrame('', index=df_s.index, columns=df_s.columns)
-        for i, row in df_s.iterrows():
-            val_str = str(row['Avg Rating']).replace('★','').strip()
+        for i in df_s.index:
+            val_str = str(df_s.at[i, 'Avg Rating']).replace('★','').strip()
             try:
-                val = float(val_str)
-                styles.at[i,'Avg Rating'] = color_rating(val)
+                styles.at[i, 'Avg Rating'] = color_rating(float(val_str))
             except ValueError:
                 pass
-            for col in ['NPS 10-Day','NPS 40-Day']:
-                styles.at[i, col] = 'color: #AAA; font-style: italic'
+            styles.at[i, 'NPS 10-Day'] = color_nps_val(df_po.at[i, '_nps10'])
+            styles.at[i, 'NPS 40-Day'] = color_nps_val(df_po.at[i, '_nps40'])
         return styles
 
     st.dataframe(
-        df_po[['PO Batch','Scent','# Reviews','Avg Rating','NPS 10-Day','NPS 40-Day']]
-        .style.apply(style_po, axis=None)
-        .set_properties(**{'text-align':'center'})
-        .set_properties(subset=['PO Batch','Scent'], **{'text-align':'left'}),
+        df_po[display_cols].style.apply(style_po, axis=None)
+        .set_properties(**{'text-align': 'center'})
+        .set_properties(subset=['PO Batch','Scent'], **{'text-align': 'left'}),
         use_container_width=True, hide_index=True,
     )
     st.markdown('</div>', unsafe_allow_html=True)

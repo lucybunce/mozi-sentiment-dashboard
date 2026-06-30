@@ -1,0 +1,41 @@
+po_name,sku,survey_type_days,nps,n_responses
+Jan 18 Stock,AW,10,71.4,7
+Jan 18 Stock,AW,40,66.7,6
+Jan 18 Stock,CC,10,61.5,39
+Jan 18 Stock,CC,40,46.2,26
+Jan 18 Stock,CZ,10,37.8,37
+Jan 18 Stock,CZ,40,62.5,24
+Jan 18 Stock,DP,10,-100.0,1
+Jan 18 Stock,DP,40,100.0,1
+Jan 18 Stock,FC,10,100.0,2
+Jan 18 Stock,FC,40,0.0,4
+Jan 18 Stock,GH,10,33.3,24
+Jan 18 Stock,GH,40,0.0,8
+Jan 18 Stock,HR,10,5.6,36
+Jan 18 Stock,HR,40,53.3,15
+Jan 18 Stock,MM,10,27.3,11
+Jan 18 Stock,MM,40,83.3,12
+Jan 18 Stock,SD,10,32.1,28
+Jan 18 Stock,SD,40,50.0,18
+Jan 18 Stock,VM,10,30.8,13
+Jan 18 Stock,VM,40,80.0,10
+January Order - Product Society,DP,10,64.3,14
+January Order - Product Society,DP,40,93.8,16
+January Order - Product Society,MM,10,63.6,22
+January Order - Product Society,MM,40,50.0,10
+March Order - 6 Degrees,AW,10,56.2,32
+March Order - 6 Degrees,AW,40,38.5,13
+March Order - 6 Degrees,CC,10,55.6,18
+March Order - 6 Degrees,CC,40,73.7,19
+March Order - 6 Degrees,CZ,10,48.7,76
+March Order - 6 Degrees,CZ,40,53.8,26
+March Order - 6 Degrees,DP,10,65.0,20
+March Order - 6 Degrees,DP,40,71.4,7
+March Order - 6 Degrees,GH,10,43.2,37
+March Order - 6 Degrees,GH,40,40.0,20
+March Order - 6 Degrees,HR,10,44.4,9
+March Order - 6 Degrees,HR,40,50.0,4
+March Order - 6 Degrees,SD,10,60.0,10
+March Order - 6 Degrees,SD,40,0.0,4
+March Order - 6 Degrees,VM,10,52.6,19
+March Order - 6 Degrees,VM,40,44.4,9
