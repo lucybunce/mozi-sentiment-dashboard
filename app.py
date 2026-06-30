@@ -108,7 +108,18 @@ def load_nps_individual():
         return pd.DataFrame()
     df = pd.read_csv(path, parse_dates=['date'])
     df['sku'] = df['sku'].str.strip().str.upper()
-    df['survey_type'] = df['survey_type'].astype(str)
+    df = df.rename(columns={'survey_type': 'survey_type_days'})
+    df['survey_type_days'] = df['survey_type_days'].astype(str)
+    return df[['date','survey_type_days','sku','score']]
+
+@st.cache_data(ttl=3600)
+def load_nps_survicate():
+    path = os.path.join(DATA_DIR, 'nps_survicate.csv')
+    if not os.path.exists(path):
+        return pd.DataFrame()
+    df = pd.read_csv(path, parse_dates=['date'])
+    df['sku'] = df['sku'].str.strip().str.upper()
+    df['survey_type_days'] = df['survey_type_days'].astype(str)
     return df
 
 @st.cache_data(ttl=3600)
@@ -121,10 +132,20 @@ def load_nps_po_historical():
     df['survey_type_days'] = df['survey_type_days'].astype(str)
     return df
 
-df_ok       = load_okendo()
-df_nps      = load_nps()
-df_indiv    = load_nps_individual()
-df_hist_nps = load_nps_po_historical()
+@st.cache_data(ttl=3600)
+def load_nps_all_individual():
+    """Combine Survicate historical + Omniconvert individual responses."""
+    parts = [load_nps_survicate(), load_nps_individual()]
+    parts = [p for p in parts if not p.empty]
+    if not parts:
+        return pd.DataFrame(columns=['date','survey_type_days','sku','score'])
+    return pd.concat(parts, ignore_index=True)
+
+df_ok        = load_okendo()
+df_nps       = load_nps()
+df_indiv     = load_nps_individual()
+df_hist_nps  = load_nps_po_historical()
+df_nps_all   = load_nps_all_individual()
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 tab1, tab2 = st.tabs(["By Scent", "By Formula (PO Batch)"])
@@ -180,33 +201,27 @@ with tab1:
         avg_cp     = sub['cleaning_power'].mean() if sub['cleaning_power'].notna().any() else None
         avg_cap    = sub['cap_pouring'].mean()     if sub['cap_pouring'].notna().any()    else None
 
-        # NPS — pick column based on period
+        # NPS — compute from combined Survicate + Omniconvert individual responses
         nps_10, nps_10n, nps_40, nps_40n = None, 0, None, 0
-        if not df_nps.empty:
-            for days, nps_ref, nps_ref_n in [(10, 'nps_10', 'nps_10n'), (40, 'nps_40', 'nps_40n')]:
-                sub_nps = df_nps[(df_nps['sku'] == sku) & (df_nps['survey_type_days'].astype(str) == str(days))]
-                if sub_nps.empty:
+        if not df_nps_all.empty:
+            nps_mask = (
+                (df_nps_all['sku'] == sku) &
+                (df_nps_all['date'].dt.date >= date_from) &
+                (df_nps_all['date'].dt.date <= date_to)
+            )
+            sub_all = df_nps_all[nps_mask]
+            for days in (10, 40):
+                grp = sub_all[sub_all['survey_type_days'] == str(days)]['score'].dropna().astype(int)
+                if grp.empty:
                     continue
-                # Use most recent row
-                latest = sub_nps.sort_values('week_end_sunday', ascending=False).iloc[0]
-                if period in ('All Time',):
-                    val = latest.get('ytd_nps')
-                    cnt = latest.get('ytd_responses', 0)
-                elif period in ('Last 30 Days', 'Last 90 Days'):
-                    val = latest.get('last_5_weeks_nps')
-                    cnt = latest.get('last_5_weeks_responses', 0)
-                else:
-                    val = latest.get('nps')
-                    cnt = latest.get('responses_count', 0)
-                try:
-                    val = float(val) if val is not None and str(val) not in ('', 'nan') else None
-                    cnt = int(float(cnt)) if cnt else 0
-                except (ValueError, TypeError):
-                    val, cnt = None, 0
+                scores = grp.tolist()
+                p = sum(1 for s in scores if s >= 9)
+                d = sum(1 for s in scores if s <= 6)
+                val = round((p - d) / len(scores) * 100, 1)
                 if days == 10:
-                    nps_10, nps_10n = val, cnt
+                    nps_10, nps_10n = val, len(scores)
                 else:
-                    nps_40, nps_40n = val, cnt
+                    nps_40, nps_40n = val, len(scores)
 
         summary_rows.append({
             'SKU': sku,
