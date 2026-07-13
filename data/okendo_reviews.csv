@@ -1,4 +1,63 @@
 date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pouring
+2026-07-13,SD,Sugar Dew,5.0,0.0,5.0,5.0,5.0
+2026-07-13,GH,Golden Hour,3.0,-1.0,2.0,5.0,5.0
+2026-07-13,CZ,Signature Cozy,1.0,-1.0,1.0,2.0,1.0
+2026-07-13,GH,Golden Hour,5.0,0.0,5.0,5.0,4.0
+2026-07-13,GH,Golden Hour,2.0,-1.0,4.0,4.0,4.0
+2026-07-12,GH,Golden Hour,1.0,-1.0,1.0,1.0,1.0
+2026-07-12,CZ,1 Pack,1.0,,,,
+2026-07-11,CC,1 Pack,5.0,,,,
+2026-07-11,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,5.0
+2026-07-11,CC,Central Coast,5.0,0.5,5.0,5.0,5.0
+2026-07-11,DP,Desert Poppy,5.0,-0.5,5.0,5.0,5.0
+2026-07-11,MM,Malibu Mornings,5.0,0.0,5.0,5.0,4.0
+2026-07-11,SD,Sugar Dew,5.0,0.0,5.0,5.0,4.0
+2026-07-11,CC,Central Coast,5.0,0.0,5.0,5.0,5.0
+2026-07-11,CZ,Signature Cozy,5.0,-0.5,5.0,5.0,5.0
+2026-07-11,SD,Sugar Dew,5.0,0.0,5.0,5.0,5.0
+2026-07-11,DP,Desert Poppy,5.0,0.0,5.0,5.0,5.0
+2026-07-10,CC,Central Coast,4.0,0.0,4.0,4.0,3.0
+2026-07-10,DP,Desert Poppy,5.0,0.0,3.0,5.0,1.0
+2026-07-10,CZ,1 Pack,5.0,,,,
+2026-07-10,GH,Golden Hour,2.0,-1.0,5.0,4.0,3.0
+2026-07-10,MM,Malibu Mornings,5.0,0.0,5.0,5.0,4.0
+2026-07-10,AW,Alpine Woods,5.0,0.5,5.0,4.0,5.0
+2026-07-10,CZ,Signature Cozy,3.0,-0.5,2.0,3.0,2.0
+2026-07-10,GH,1 Pack,1.0,,,,
+2026-07-09,SD,Sugar Dew,5.0,0.0,5.0,5.0,5.0
+2026-07-09,GH,Golden Hour,5.0,0.0,5.0,4.0,4.0
+2026-07-09,CZ,Signature Cozy,5.0,0.0,5.0,3.0,1.0
+2026-07-09,GH,Mozi Wash Detergent,1.0,,,,
+2026-07-09,GH,1 Pack,1.0,,,,
+2026-07-09,AW,Alpine Woods,2.0,-0.5,1.0,3.0,4.0
+2026-07-09,CZ,Signature Cozy,5.0,0.0,3.0,5.0,3.0
+2026-07-09,MM,Malibu Mornings,5.0,0.0,5.0,5.0,3.0
+2026-07-09,CZ,Signature Cozy,5.0,0.0,5.0,4.0,5.0
+2026-07-08,GH,Golden Hour,4.0,-1.0,3.0,4.0,4.0
+2026-07-08,CZ,Signature Cozy,3.0,0.0,4.0,2.0,2.0
+2026-07-08,CZ,Signature Cozy,5.0,0.0,5.0,5.0,3.0
+2026-07-08,DP,Desert Poppy,5.0,0.0,5.0,5.0,5.0
+2026-07-08,CZ,1 Pack,5.0,,,,
+2026-07-08,CZ,Signature Cozy,5.0,0.0,4.0,4.0,4.0
+2026-07-08,SD,Sugar Dew,1.0,-1.0,2.0,4.0,4.0
+2026-07-08,AW,Alpine Woods,5.0,0.0,5.0,5.0,3.0
+2026-07-08,CC,Central Coast,5.0,0.0,5.0,5.0,5.0
+2026-07-07,CC,Central Coast,4.0,0.0,3.0,4.0,4.0
+2026-07-07,SD,Sugar Dew,5.0,0.0,5.0,5.0,5.0
+2026-07-07,MM,Malibu Mornings,1.0,-1.0,2.0,3.0,1.0
+2026-07-07,DP,Desert Poppy,5.0,0.0,5.0,5.0,2.0
+2026-07-07,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,4.0
+2026-07-07,CC,Central Coast,5.0,0.0,5.0,5.0,5.0
+2026-07-07,DP,Desert Poppy,5.0,0.0,5.0,5.0,5.0
+2026-07-07,CC,Central Coast,2.0,1.0,1.0,5.0,1.0
+2026-07-07,CZ,Signature Cozy,5.0,0.0,5.0,3.0,3.0
+2026-07-07,CZ,Signature Cozy,5.0,0.0,5.0,4.0,5.0
+2026-07-07,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0
+2026-07-07,MM,Malibu Mornings,5.0,0.0,5.0,4.0,5.0
+2026-07-06,VM,1 Pack,5.0,,,,
+2026-07-06,DP,Desert Poppy,4.0,0.0,5.0,4.0,1.0
+2026-07-06,DP,Desert Poppy,5.0,0.0,5.0,5.0,5.0
+2026-07-06,CZ,Signature Cozy,1.0,-1.0,5.0,1.0,3.0
 2026-07-06,MM,Malibu Mornings,5.0,0.0,5.0,5.0,5.0
 2026-07-06,SD,Sugar Dew,3.0,-1.0,5.0,4.0,3.0
 2026-07-06,CZ,Signature Cozy,3.0,-1.0,4.0,4.0,3.0
@@ -142,7 +201,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-06-15,GH,Golden Hour,5.0,0.0,5.0,5.0,3.0
 2026-06-15,CZ,Signature Cozy,3.0,0.0,3.0,3.0,2.0
 2026-06-15,GH,Golden Hour,5.0,0.0,5.0,4.0,3.0
-2026-06-15,CC,1 Pack - Only for CX Replacements,5.0,0.0,4.0,4.0,5.0
+2026-06-15,CC,Mozi Wash Detergent,5.0,0.0,4.0,4.0,5.0
 2026-06-15,CC,Central Coast,2.0,-1.0,3.0,3.0,4.0
 2026-06-15,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0
 2026-06-14,CC,Central Coast,5.0,0.0,5.0,5.0,4.0
@@ -154,7 +213,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-06-12,DP,Desert Poppy,2.0,-1.0,3.0,3.0,5.0
 2026-06-12,GH,Golden Hour,2.0,-1.0,3.0,3.0,5.0
 2026-06-12,GH,Golden Hour,5.0,0.0,5.0,4.0,4.0
-2026-06-12,CC,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,4.0
+2026-06-12,CC,Mozi Wash Detergent,5.0,0.0,5.0,5.0,4.0
 2026-06-12,AW,Alpine Woods,5.0,0.0,5.0,5.0,3.0
 2026-06-11,DP,Desert Poppy,5.0,0.0,5.0,5.0,5.0
 2026-06-11,SD,Sugar Dew,5.0,0.0,5.0,4.0,4.0
@@ -176,7 +235,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-06-09,AW,Alpine Woods,5.0,0.0,5.0,5.0,4.0
 2026-06-08,CZ,Signature Cozy,5.0,0.5,5.0,5.0,5.0
 2026-06-08,MM,Malibu Mornings,5.0,0.0,5.0,5.0,4.0
-2026-06-08,CZ,1 Pack - Only for CX Replacements,3.0,-1.0,3.0,4.0,4.0
+2026-06-08,CZ,Mozi Wash Detergent,3.0,-1.0,3.0,4.0,4.0
 2026-06-08,CZ,1 Pack,5.0,0.0,5.0,5.0,5.0
 2026-06-08,FC,Free and Clear,5.0,0.0,3.0,3.0,3.0
 2026-06-08,DP,Desert Poppy,5.0,0.0,5.0,5.0,5.0
@@ -198,7 +257,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-06-06,VM,Vanilla Moon,5.0,0.0,5.0,3.0,4.0
 2026-06-06,CZ,Signature Cozy,3.0,0.0,2.0,3.0,4.0
 2026-06-06,SD,Sugar Dew,5.0,0.0,3.0,3.0,2.0
-2026-06-05,AW,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,5.0
+2026-06-05,AW,Mozi Wash Detergent,5.0,0.0,5.0,5.0,5.0
 2026-06-05,CC,Central Coast,5.0,0.0,5.0,5.0,3.0
 2026-06-04,CC,Central Coast,5.0,0.0,5.0,5.0,3.0
 2026-06-04,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0
@@ -292,7 +351,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-05-22,GH,Golden Hour,5.0,0.0,5.0,5.0,3.0
 2026-05-22,CZ,Signature Cozy,4.0,0.5,4.0,4.0,3.0
 2026-05-22,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0
-2026-05-21,GH,1 Pack - Only for CX Replacements,1.0,-1.0,1.0,2.0,1.0
+2026-05-21,GH,Mozi Wash Detergent,1.0,-1.0,1.0,2.0,1.0
 2026-05-21,MM,Malibu Mornings,5.0,0.0,5.0,5.0,5.0
 2026-05-21,GH,Golden Hour,2.0,0.0,5.0,5.0,1.0
 2026-05-21,CC,Central Coast,2.0,-0.5,4.0,1.0,1.0
@@ -309,7 +368,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-05-19,DP,Desert Poppy,5.0,0.5,4.0,5.0,3.0
 2026-05-19,GH,Golden Hour,5.0,0.0,5.0,5.0,4.0
 2026-05-19,GH,Golden Hour,5.0,0.0,5.0,4.0,4.0
-2026-05-19,VM,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,4.0
+2026-05-19,VM,Mozi Wash Detergent,5.0,0.0,5.0,5.0,4.0
 2026-05-18,DP,Desert Poppy,5.0,0.0,5.0,5.0,5.0
 2026-05-18,CC,Central Coast,4.0,0.5,5.0,5.0,1.0
 2026-05-18,HR,Hollywood Rouge,3.0,-1.0,5.0,4.0,3.0
@@ -395,7 +454,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-05-11,DP,Desert Poppy,3.0,0.0,5.0,3.0,1.0
 2026-05-11,CC,Central Coast,3.0,-1.0,5.0,5.0,3.0
 2026-05-11,AW,Alpine Woods,4.0,0.0,4.0,5.0,4.0
-2026-05-11,VM,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,3.0
+2026-05-11,VM,Mozi Wash Detergent,5.0,0.0,5.0,5.0,3.0
 2026-05-11,AW,Alpine Woods,5.0,0.0,5.0,4.0,5.0
 2026-05-11,CZ,Signature Cozy,2.0,-1.0,4.0,4.0,5.0
 2026-05-11,GH,Golden Hour,5.0,0.0,5.0,5.0,5.0
@@ -484,7 +543,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-05-01,GH,Golden Hour,5.0,0.0,3.0,3.0,5.0
 2026-05-01,AW,Alpine Woods,5.0,0.0,3.0,3.0,5.0
 2026-05-01,CC,Central Coast,5.0,0.0,5.0,4.0,4.0
-2026-04-30,CC,1 Pack - Only for CX Replacements,3.0,0.0,3.0,3.0,1.0
+2026-04-30,CC,Mozi Wash Detergent,3.0,0.0,3.0,3.0,1.0
 2026-04-30,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0
 2026-04-30,CC,Central Coast,5.0,0.0,5.0,5.0,2.0
 2026-04-30,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0
@@ -586,7 +645,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-23,CZ,Signature Cozy,2.0,-1.0,4.0,3.0,2.0
 2026-04-23,CC,Central Coast,5.0,0.0,5.0,5.0,5.0
 2026-04-23,MM,Malibu Mornings,3.0,-0.5,3.0,3.0,4.0
-2026-04-22,CC,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,5.0
+2026-04-22,CC,Mozi Wash Detergent,5.0,0.0,5.0,5.0,5.0
 2026-04-22,GH,Golden Hour,4.0,0.0,4.0,4.0,3.0
 2026-04-22,CC,Central Coast,5.0,0.0,5.0,3.0,4.0
 2026-04-22,MM,Malibu Mornings,5.0,0.0,5.0,4.0,5.0
@@ -616,12 +675,12 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-20,HR,Hollywood Rouge,1.0,0.0,5.0,4.0,1.0
 2026-04-20,SD,Sugar Dew,1.0,-1.0,1.0,1.0,1.0
 2026-04-20,HR,Hollywood Rouge,1.0,-1.0,1.0,1.0,1.0
-2026-04-20,FC,1 Pack - Only for CX Replacements,4.0,0.0,4.0,4.0,4.0
+2026-04-20,FC,Mozi Wash Detergent,4.0,0.0,4.0,4.0,4.0
 2026-04-20,HR,Hollywood Rouge,1.0,-1.0,5.0,4.0,3.0
 2026-04-20,CC,Central Coast,5.0,0.0,5.0,5.0,5.0
 2026-04-20,MM,Malibu Mornings,5.0,0.0,5.0,5.0,1.0
 2026-04-20,DP,Desert Poppy,4.0,0.0,5.0,5.0,1.0
-2026-04-20,CC,1 Pack - Only for CX Replacements,5.0,-0.5,5.0,5.0,3.0
+2026-04-20,CC,Mozi Wash Detergent,5.0,-0.5,5.0,5.0,3.0
 2026-04-20,HR,Hollywood Rouge,5.0,-0.5,5.0,4.0,3.0
 2026-04-20,AW,Alpine Woods,5.0,0.0,5.0,4.0,3.0
 2026-04-20,CZ,Signature Cozy,5.0,0.0,5.0,4.0,3.0
@@ -636,7 +695,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-19,GH,Golden Hour,4.0,-1.0,4.0,5.0,1.0
 2026-04-19,GH,Golden Hour,5.0,0.0,5.0,5.0,5.0
 2026-04-19,CC,Central Coast,5.0,0.0,5.0,5.0,4.0
-2026-04-18,VM,1 Pack - Only for CX Replacements,5.0,0.0,4.0,4.0,5.0
+2026-04-18,VM,Mozi Wash Detergent,5.0,0.0,4.0,4.0,5.0
 2026-04-18,GH,Golden Hour,3.0,-1.0,3.0,5.0,5.0
 2026-04-18,MM,Malibu Mornings,1.0,-1.0,2.0,1.0,1.0
 2026-04-18,CC,Central Coast,5.0,0.0,4.0,4.0,3.0
@@ -665,7 +724,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-15,MM,Malibu Mornings,5.0,0.0,5.0,5.0,5.0
 2026-04-15,CC,Central Coast,4.0,0.0,3.0,5.0,5.0
 2026-04-15,HR,Hollywood Rouge,2.0,-1.0,1.0,5.0,1.0
-2026-04-15,CZ,1 Pack - Only for CX Replacements,5.0,0.0,4.0,3.0,2.0
+2026-04-15,CZ,Mozi Wash Detergent,5.0,0.0,4.0,3.0,2.0
 2026-04-15,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0
 2026-04-15,SD,Sugar Dew,5.0,0.0,5.0,5.0,4.0
 2026-04-15,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0
@@ -675,16 +734,16 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-14,SD,Sugar Dew,5.0,0.0,5.0,5.0,5.0
 2026-04-14,VM,Vanilla Moon,1.0,-1.0,2.0,4.0,5.0
 2026-04-14,DP,Desert Poppy,3.0,0.0,5.0,4.0,2.0
-2026-04-14,CZ,1 Pack - Only for CX Replacements,5.0,0.0,5.0,4.0,3.0
+2026-04-14,CZ,Mozi Wash Detergent,5.0,0.0,5.0,4.0,3.0
 2026-04-14,CZ,Signature Cozy,4.0,0.0,5.0,5.0,5.0
 2026-04-14,SD,Sugar Dew,5.0,0.0,5.0,5.0,3.0
 2026-04-14,DP,Desert Poppy,5.0,0.0,5.0,5.0,3.0
 2026-04-14,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,5.0
-2026-04-14,AW,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,5.0
+2026-04-14,AW,Mozi Wash Detergent,5.0,0.0,5.0,5.0,5.0
 2026-04-14,DP,Desert Poppy,3.0,-0.5,3.0,5.0,1.0
 2026-04-14,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0
 2026-04-14,CZ,Signature Cozy,5.0,0.0,5.0,5.0,4.0
-2026-04-13,MM,1 Pack - Only for CX Replacements,5.0,0.0,5.0,4.0,3.0
+2026-04-13,MM,Mozi Wash Detergent,5.0,0.0,5.0,4.0,3.0
 2026-04-13,CC,Central Coast,5.0,0.0,5.0,5.0,5.0
 2026-04-13,HR,Hollywood Rouge,4.0,0.0,4.0,3.0,2.0
 2026-04-13,CC,Central Coast,5.0,0.0,5.0,5.0,5.0
@@ -716,9 +775,9 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-10,CZ,Signature Cozy,5.0,0.0,5.0,4.0,3.0
 2026-04-09,SD,Sugar Dew,5.0,0.0,5.0,5.0,5.0
 2026-04-09,GH,Golden Hour,5.0,0.0,5.0,5.0,4.0
-2026-04-09,HR,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,4.0
+2026-04-09,HR,Mozi Wash Detergent,5.0,0.0,5.0,5.0,4.0
 2026-04-09,CZ,Signature Cozy,5.0,0.0,4.0,4.0,3.0
-2026-04-09,CC,1 Pack - Only for CX Replacements,5.0,0.0,5.0,3.0,3.0
+2026-04-09,CC,Mozi Wash Detergent,5.0,0.0,5.0,3.0,3.0
 2026-04-09,GH,Golden Hour,5.0,0.0,5.0,4.0,4.0
 2026-04-09,GH,Golden Hour,1.0,-1.0,1.0,3.0,2.0
 2026-04-09,GH,Golden Hour,1.0,-1.0,1.0,3.0,2.0
@@ -736,13 +795,13 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-08,VM,Vanilla Moon,1.0,-1.0,5.0,3.0,2.0
 2026-04-08,CZ,Signature Cozy,5.0,0.0,5.0,4.0,2.0
 2026-04-08,CZ,1 Pack,5.0,0.0,5.0,5.0,5.0
-2026-04-08,HR,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,5.0
+2026-04-08,HR,Mozi Wash Detergent,5.0,0.0,5.0,5.0,5.0
 2026-04-07,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,5.0
 2026-04-07,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0
 2026-04-07,CC,Central Coast,5.0,0.0,5.0,5.0,2.0
 2026-04-07,CZ,Signature Cozy,4.0,-0.5,4.0,4.0,2.0
 2026-04-07,GH,Golden Hour,2.0,-1.0,4.0,3.0,1.0
-2026-04-07,CZ,1 Pack - Only for CX Replacements,4.0,0.0,5.0,4.0,1.0
+2026-04-07,CZ,Mozi Wash Detergent,4.0,0.0,5.0,4.0,1.0
 2026-04-07,CZ,Signature Cozy,3.0,0.0,5.0,4.0,2.0
 2026-04-07,SD,Sugar Dew,1.0,0.0,4.0,3.0,1.0
 2026-04-07,GH,Golden Hour,2.0,-0.5,1.0,3.0,3.0
@@ -758,9 +817,9 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-06,GH,Golden Hour,5.0,0.0,5.0,5.0,5.0
 2026-04-06,HR,Hollywood Rouge,5.0,0.0,4.0,3.0,4.0
 2026-04-06,HR,Hollywood Rouge,1.0,-1.0,1.0,3.0,3.0
-2026-04-06,CC,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,5.0
-2026-04-06,CZ,1 Pack - Only for CX Replacements,3.0,0.0,5.0,4.0,2.0
-2026-04-06,MM,1 Pack - Only for CX Replacements,4.0,-0.5,5.0,3.0,4.0
+2026-04-06,CC,Mozi Wash Detergent,5.0,0.0,5.0,5.0,5.0
+2026-04-06,CZ,Mozi Wash Detergent,3.0,0.0,5.0,4.0,2.0
+2026-04-06,MM,Mozi Wash Detergent,4.0,-0.5,5.0,3.0,4.0
 2026-04-06,VM,Vanilla Moon,5.0,0.0,5.0,5.0,5.0
 2026-04-06,CZ,1 Pack,1.0,-1.0,3.0,3.0,1.0
 2026-04-06,MM,Malibu Mornings,3.0,0.0,4.0,3.0,2.0
@@ -772,7 +831,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-06,HR,1 Pack,5.0,0.5,5.0,5.0,5.0
 2026-04-05,CC,Central Coast,5.0,0.0,5.0,4.0,2.0
 2026-04-05,GH,Golden Hour,5.0,-0.5,5.0,3.0,3.0
-2026-04-04,DP,1 Pack - Only for CX Replacements,2.0,-1.0,3.0,4.0,2.0
+2026-04-04,DP,Mozi Wash Detergent,2.0,-1.0,3.0,4.0,2.0
 2026-04-04,CZ,Signature Cozy,5.0,0.0,3.0,5.0,5.0
 2026-04-04,HR,Hollywood Rouge,3.0,-0.5,4.0,4.0,4.0
 2026-04-04,CZ,Signature Cozy,5.0,0.0,5.0,4.0,4.0
@@ -791,7 +850,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-04-02,MM,Malibu Mornings,5.0,0.0,4.0,4.0,4.0
 2026-04-02,AW,Alpine Woods,1.0,0.5,4.0,4.0,1.0
 2026-04-02,HR,Hollywood Rouge,4.0,-0.5,5.0,4.0,3.0
-2026-04-02,HR,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,5.0
+2026-04-02,HR,Mozi Wash Detergent,5.0,0.0,5.0,5.0,5.0
 2026-04-02,DP,Desert Poppy,5.0,0.0,5.0,5.0,3.0
 2026-04-02,CC,Central Coast,5.0,0.0,5.0,5.0,4.0
 2026-04-02,FC,Free and Clear,4.0,0.0,5.0,5.0,5.0
@@ -833,7 +892,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-30,HR,Hollywood Rouge,5.0,-1.0,5.0,4.0,4.0
 2026-03-30,SD,Sugar Dew,5.0,-0.5,5.0,5.0,5.0
 2026-03-30,HR,Hollywood Rouge,5.0,-0.5,5.0,5.0,5.0
-2026-03-30,CZ,1 Pack - Only for CX Replacements,5.0,0.0,4.0,4.0,4.0
+2026-03-30,CZ,Mozi Wash Detergent,5.0,0.0,4.0,4.0,4.0
 2026-03-30,CC,Central Coast,1.0,1.0,1.0,2.0,3.0
 2026-03-30,CC,Central Coast,5.0,-0.5,5.0,5.0,5.0
 2026-03-30,GH,Golden Hour,5.0,-1.0,4.0,5.0,3.0
@@ -867,7 +926,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-27,DP,Desert Poppy,4.0,-0.5,3.0,3.0,2.0
 2026-03-27,HR,Hollywood Rouge,1.0,-1.0,5.0,3.0,1.0
 2026-03-27,HR,Hollywood Rouge,5.0,0.0,5.0,4.0,4.0
-2026-03-27,HR,1 Pack - Only for CX Replacements,5.0,0.0,4.0,4.0,4.0
+2026-03-27,HR,Mozi Wash Detergent,5.0,0.0,4.0,4.0,4.0
 2026-03-27,DP,Desert Poppy,4.0,-1.0,5.0,3.0,1.0
 2026-03-27,CC,Central Coast,5.0,0.0,5.0,5.0,5.0
 2026-03-27,CZ,Signature Cozy,5.0,0.0,5.0,3.0,5.0
@@ -931,7 +990,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-23,CZ,Signature Cozy,5.0,0.0,5.0,5.0,4.0
 2026-03-23,GH,Golden Hour,2.0,-1.0,2.0,1.0,1.0
 2026-03-23,VM,Vanilla Moon,5.0,0.0,5.0,5.0,5.0
-2026-03-23,VM,1 Pack - Only for CX Replacements,3.0,-0.5,4.0,4.0,1.0
+2026-03-23,VM,Mozi Wash Detergent,3.0,-0.5,4.0,4.0,1.0
 2026-03-22,SD,Sugar Dew,5.0,0.0,5.0,5.0,5.0
 2026-03-22,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,5.0
 2026-03-22,GH,Golden Hour,5.0,0.0,5.0,5.0,3.0
@@ -951,7 +1010,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-20,HR,Hollywood Rouge,1.0,-1.0,1.0,1.0,1.0
 2026-03-20,GH,Golden Hour,2.0,-1.0,3.0,3.0,1.0
 2026-03-20,GH,Golden Hour,5.0,-0.5,3.0,5.0,5.0
-2026-03-19,SD,1 Pack - Only for CX Replacements,3.0,0.0,3.0,3.0,1.0
+2026-03-19,SD,Mozi Wash Detergent,3.0,0.0,3.0,3.0,1.0
 2026-03-19,HR,Hollywood Rouge,3.0,-1.0,5.0,4.0,4.0
 2026-03-19,AW,Alpine Woods,5.0,0.0,5.0,5.0,1.0
 2026-03-19,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,4.0
@@ -971,11 +1030,11 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-18,HR,Hollywood Rouge,3.0,-1.0,1.0,1.0,2.0
 2026-03-17,MM,Malibu Mornings,5.0,0.0,5.0,5.0,2.0
 2026-03-17,CC,Central Coast,5.0,0.0,5.0,5.0,2.0
-2026-03-17,SD,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,2.0
+2026-03-17,SD,Mozi Wash Detergent,5.0,0.0,5.0,5.0,2.0
 2026-03-17,AW,Alpine Woods,3.0,0.0,5.0,4.0,1.0
 2026-03-17,CC,Central Coast,5.0,-0.5,5.0,4.0,5.0
 2026-03-17,SD,Sugar Dew,5.0,0.0,5.0,5.0,5.0
-2026-03-17,MM,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,5.0
+2026-03-17,MM,Mozi Wash Detergent,5.0,0.0,5.0,5.0,5.0
 2026-03-17,DP,Desert Poppy,5.0,0.0,5.0,5.0,5.0
 2026-03-17,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0
 2026-03-17,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0
@@ -1012,11 +1071,11 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-13,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,2.0
 2026-03-13,MM,Malibu Mornings,5.0,0.0,5.0,5.0,3.0
 2026-03-13,CZ,Signature Cozy,5.0,0.0,5.0,5.0,3.0
-2026-03-13,SD,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,5.0
+2026-03-13,SD,Mozi Wash Detergent,5.0,0.0,5.0,5.0,5.0
 2026-03-13,CZ,Signature Cozy,5.0,0.0,5.0,4.0,3.0
 2026-03-13,DP,Desert Poppy,3.0,-1.0,1.0,4.0,4.0
 2026-03-13,HR,Hollywood Rouge,4.0,-0.5,5.0,4.0,3.0
-2026-03-13,MM,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,3.0
+2026-03-13,MM,Mozi Wash Detergent,5.0,0.0,5.0,5.0,3.0
 2026-03-13,CZ,Signature Cozy,5.0,0.0,5.0,5.0,1.0
 2026-03-13,MM,Malibu Mornings,5.0,0.0,5.0,4.0,1.0
 2026-03-13,DP,Desert Poppy,5.0,0.0,5.0,5.0,1.0
@@ -1050,7 +1109,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-11,CC,Central Coast,5.0,0.0,4.0,5.0,5.0
 2026-03-11,CC,Central Coast,1.0,-0.5,4.0,3.0,1.0
 2026-03-11,CC,Central Coast,5.0,0.0,4.0,4.0,4.0
-2026-03-11,CZ,1 Pack - Only for CX Replacements,5.0,0.0,5.0,5.0,4.0
+2026-03-11,CZ,Mozi Wash Detergent,5.0,0.0,5.0,5.0,4.0
 2026-03-11,CZ,Signature Cozy,5.0,0.0,5.0,5.0,2.0
 2026-03-11,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0
 2026-03-11,HR,Hollywood Rouge,4.0,0.0,5.0,4.0,2.0
@@ -1069,7 +1128,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-10,DP,Desert Poppy,5.0,,,,
 2026-03-10,GH,Golden Hour,2.0,,,,
 2026-03-10,MM,Malibu Mornings,3.0,,,,
-2026-03-10,CC,1 Pack - Only for CX Replacements,5.0,,,,
+2026-03-10,CC,Mozi Wash Detergent,5.0,,,,
 2026-03-10,CZ,Signature Cozy,5.0,,,,
 2026-03-10,MM,Malibu Mornings,5.0,,,,
 2026-03-10,SD,Sugar Dew,5.0,,,,
@@ -1089,7 +1148,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-09,MM,Malibu Mornings,4.0,,,,
 2026-03-09,HR,Hollywood Rouge,3.0,,,,
 2026-03-09,CC,Central Coast,5.0,,,,
-2026-03-09,GH,1 Pack - Only for CX Replacements,3.0,,,,
+2026-03-09,GH,Mozi Wash Detergent,3.0,,,,
 2026-03-08,CZ,1 Pack,1.0,,,,
 2026-03-08,GH,Golden Hour,5.0,,,,
 2026-03-08,CZ,Signature Cozy,5.0,,,,
@@ -1109,7 +1168,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-06,AW,Alpine Woods,2.0,,,,
 2026-03-06,VM,Vanilla Moon,5.0,,,,
 2026-03-06,CC,Central Coast,5.0,,,,
-2026-03-06,SD,1 Pack - Only for CX Replacements,5.0,,,,
+2026-03-06,SD,Mozi Wash Detergent,5.0,,,,
 2026-03-06,HR,Hollywood Rouge,1.0,,,,
 2026-03-06,MM,Malibu Mornings,1.0,,,,
 2026-03-06,GH,Golden Hour,1.0,,,,
@@ -1125,7 +1184,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-05,CZ,Signature Cozy,5.0,,,,
 2026-03-05,CZ,Signature Cozy,5.0,,,,
 2026-03-05,CC,Central Coast,5.0,,,,
-2026-03-05,VM,1 Pack - Only for CX Replacements,5.0,,,,
+2026-03-05,VM,Mozi Wash Detergent,5.0,,,,
 2026-03-05,GH,Golden Hour,4.0,,,,
 2026-03-05,MM,Malibu Mornings,4.0,,,,
 2026-03-04,MM,Malibu Mornings,5.0,,,,
@@ -1141,7 +1200,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-03-03,GH,Golden Hour,2.0,,,,
 2026-03-03,HR,Hollywood Rouge,1.0,,,,
 2026-03-03,GH,Golden Hour,4.0,,,,
-2026-03-03,HR,1 Pack - Only for CX Replacements,2.0,,,,
+2026-03-03,HR,Mozi Wash Detergent,2.0,,,,
 2026-03-03,DP,Desert Poppy,5.0,,,,
 2026-03-03,CZ,Mozi Wash Laundry Detergent,1.0,,,,
 2026-03-03,CC,Central Coast,5.0,,,,
@@ -1185,9 +1244,9 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-02-26,GH,Golden Hour,1.0,,,,
 2026-02-25,GH,Golden Hour,5.0,,,,
 2026-02-25,AW,Alpine Woods,5.0,,,,
-2026-02-25,CZ,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-25,CZ,Mozi Wash Detergent,5.0,,,,
 2026-02-25,MM,Malibu Mornings,4.0,,,,
-2026-02-25,HR,1 Pack - Only for CX Replacements,4.0,,,,
+2026-02-25,HR,Mozi Wash Detergent,4.0,,,,
 2026-02-25,AW,Alpine Woods,4.0,,,,
 2026-02-25,HR,Hollywood Rouge,1.0,,,,
 2026-02-25,CZ,Signature Cozy,5.0,,,,
@@ -1226,29 +1285,29 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-02-21,HR,Hollywood Rouge,1.0,,,,
 2026-02-21,CZ,Signature Cozy,5.0,,,,
 2026-02-21,AW,Alpine Woods,2.0,,,,
-2026-02-21,SD,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-21,SD,Mozi Wash Detergent,5.0,,,,
 2026-02-20,VM,Vanilla Moon,5.0,,,,
 2026-02-20,SD,Sugar Dew,5.0,,,,
 2026-02-20,HR,Hollywood Rouge,5.0,,,,
-2026-02-20,CZ,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-20,CZ,Mozi Wash Detergent,5.0,,,,
 2026-02-20,GH,Golden Hour,5.0,,,,
 2026-02-20,MM,Malibu Mornings,5.0,,,,
 2026-02-20,VM,Vanilla Moon,5.0,,,,
 2026-02-20,GH,Golden Hour,3.0,,,,
-2026-02-20,AW,1 Pack - Only for CX Replacements,4.0,,,,
+2026-02-20,AW,Mozi Wash Detergent,4.0,,,,
 2026-02-19,HR,Hollywood Rouge,2.0,,,,
 2026-02-19,GH,Golden Hour,5.0,,,,
 2026-02-19,GH,Golden Hour,5.0,,,,
 2026-02-19,AW,Alpine Woods,5.0,,,,
 2026-02-19,DP,Desert Poppy,5.0,,,,
-2026-02-18,CZ,1 Pack - Only for CX Replacements,2.0,,,,
+2026-02-18,CZ,Mozi Wash Detergent,2.0,,,,
 2026-02-18,GH,Golden Hour,2.0,,,,
 2026-02-18,CZ,Mozi Wash Signature Detergent,3.0,,,,
 2026-02-17,CZ,Signature Cozy,2.0,,,,
 2026-02-17,AW,Alpine Woods,5.0,,,,
 2026-02-17,GH,Golden Hour,2.0,,,,
 2026-02-17,CZ,Signature Cozy,5.0,,,,
-2026-02-17,CZ,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-17,CZ,Mozi Wash Detergent,5.0,,,,
 2026-02-17,GH,Golden Hour,1.0,,,,
 2026-02-17,MM,Malibu Mornings,5.0,,,,
 2026-02-17,CZ,Signature Cozy,5.0,,,,
@@ -1260,7 +1319,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-02-16,MM,Malibu Mornings,3.0,,,,
 2026-02-16,MM,Malibu Mornings,4.0,,,,
 2026-02-16,HR,Hollywood Rouge,4.0,,,,
-2026-02-16,DP,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-16,DP,Mozi Wash Detergent,5.0,,,,
 2026-02-16,GH,Golden Hour,1.0,,,,
 2026-02-16,GH,Golden Hour,2.0,,,,
 2026-02-16,CZ,Signature Cozy,4.0,,,,
@@ -1273,7 +1332,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-02-16,GH,Golden Hour,3.0,,,,
 2026-02-15,VM,Vanilla Moon,5.0,,,,
 2026-02-15,GH,Golden Hour,5.0,,,,
-2026-02-15,MM,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-15,MM,Mozi Wash Detergent,5.0,,,,
 2026-02-14,CZ,Signature Cozy,5.0,,,,
 2026-02-14,AW,Alpine Woods,1.0,,,,
 2026-02-14,HR,Hollywood Rouge,2.0,,,,
@@ -1293,7 +1352,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-02-12,AW,Alpine Woods,3.0,,,,
 2026-02-12,HR,Hollywood Rouge,5.0,,,,
 2026-02-12,GH,Golden Hour,1.0,,,,
-2026-02-12,CZ,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-12,CZ,Mozi Wash Detergent,5.0,,,,
 2026-02-12,HR,Hollywood Rouge,5.0,,,,
 2026-02-11,SD,Sugar Dew,5.0,,,,
 2026-02-11,HR,Hollywood Rouge,2.0,,,,
@@ -1328,7 +1387,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-02-09,GH,Golden Hour,2.0,,,,
 2026-02-09,GH,Golden Hour,5.0,,,,
 2026-02-09,MM,Malibu Mornings,3.0,,,,
-2026-02-09,CZ,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-09,CZ,Mozi Wash Detergent,5.0,,,,
 2026-02-08,CC,Central Coast,2.0,,,,
 2026-02-08,AW,Alpine Woods,2.0,,,,
 2026-02-08,CZ,1 Pack,5.0,,,,
@@ -1367,13 +1426,13 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-02-05,CZ,Signature Cozy,3.0,,,,
 2026-02-05,SD,Sugar Dew,5.0,,,,
 2026-02-04,GH,Golden Hour,3.0,,,,
-2026-02-04,SD,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-04,SD,Mozi Wash Detergent,5.0,,,,
 2026-02-04,CC,Central Coast,5.0,,,,
 2026-02-04,HR,Hollywood Rouge,5.0,,,,
 2026-02-04,HR,Hollywood Rouge,3.0,,,,
 2026-02-04,DP,Desert Poppy,5.0,,,,
 2026-02-04,CZ,Signature Cozy,5.0,,,,
-2026-02-04,SD,1 Pack - Only for CX Replacements,5.0,,,,
+2026-02-04,SD,Mozi Wash Detergent,5.0,,,,
 2026-02-04,CZ,Signature Cozy,5.0,,,,
 2026-02-04,FC,Free and Clear,4.0,,,,
 2026-02-04,AW,Alpine Woods,5.0,,,,
@@ -1387,7 +1446,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-02-03,MM,Malibu Mornings,5.0,,,,
 2026-02-03,CC,Central Coast,5.0,,,,
 2026-02-03,HR,Hollywood Rouge,3.0,,,,
-2026-02-03,GH,1 Pack - Only for CX Replacements,2.0,,,,
+2026-02-03,GH,Mozi Wash Detergent,2.0,,,,
 2026-02-03,CZ,Signature Cozy,4.0,,,,
 2026-02-03,GH,Golden Hour,1.0,,,,
 2026-02-03,GH,Golden Hour,1.0,,,,
@@ -1423,12 +1482,12 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-01-30,DP,Mozi Wash Laundry Detergent,2.0,,,,
 2026-01-30,HR,Hollywood Rouge,2.0,,,,
 2026-01-29,HR,Hollywood Rouge,3.0,,,,
-2026-01-29,DP,1 Pack - Only for CX Replacements,5.0,,,,
+2026-01-29,DP,Mozi Wash Detergent,5.0,,,,
 2026-01-28,SD,Sugar Dew,2.0,,,,
 2026-01-28,CZ,Signature Cozy,2.0,,,,
 2026-01-28,HR,Hollywood Rouge,2.0,,,,
 2026-01-28,CZ,Signature Cozy,2.0,,,,
-2026-01-28,SD,1 Pack - Only for CX Replacements,3.0,,,,
+2026-01-28,SD,Mozi Wash Detergent,3.0,,,,
 2026-01-28,CZ,Signature Cozy,5.0,,,,
 2026-01-28,VM,Vanilla Moon,3.0,,,,
 2026-01-28,AW,Alpine Woods,3.0,,,,
@@ -1460,7 +1519,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-01-25,HR,Hollywood Rouge,5.0,,,,
 2026-01-25,CC,Central Coast,3.0,,,,
 2026-01-25,CZ,Signature Cozy,3.0,,,,
-2026-01-25,VM,1 Pack - Only for CX Replacements,1.0,,,,
+2026-01-25,VM,Mozi Wash Detergent,1.0,,,,
 2026-01-25,GH,Golden Hour,3.0,,,,
 2026-01-24,CC,Central Coast,5.0,,,,
 2026-01-24,SD,Sugar Dew,5.0,,,,
@@ -1471,7 +1530,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-01-22,AW,Alpine Woods,2.0,,,,
 2026-01-22,CZ,Signature Cozy,2.0,,,,
 2026-01-22,GH,Golden Hour,5.0,,,,
-2026-01-21,CZ,1 Pack - Only for CX Replacements,1.0,,,,
+2026-01-21,CZ,Mozi Wash Detergent,1.0,,,,
 2026-01-21,GH,Golden Hour,3.0,,,,
 2026-01-21,CZ,1 Pack,3.0,,,,
 2026-01-21,CZ,Signature Cozy,3.0,,,,
@@ -1511,7 +1570,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-01-15,SD,Sugar Dew,5.0,,,,
 2026-01-15,HR,Hollywood Rouge,1.0,,,,
 2026-01-14,DP,Desert Poppy,5.0,,,,
-2026-01-14,CZ,1 Pack - Only for CX Replacements,5.0,,,,
+2026-01-14,CZ,Mozi Wash Detergent,5.0,,,,
 2026-01-14,HR,Hollywood Rouge,3.0,,,,
 2026-01-14,HR,Hollywood Rouge,1.0,,,,
 2026-01-14,CZ,Signature Cozy,5.0,,,,
@@ -1521,7 +1580,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-01-14,CZ,Signature Cozy,5.0,,,,
 2026-01-14,CC,Central Coast,5.0,,,,
 2026-01-14,VM,Vanilla Moon,4.0,,,,
-2026-01-14,CZ,1 Pack - Only for CX Replacements,5.0,,,,
+2026-01-14,CZ,Mozi Wash Detergent,5.0,,,,
 2026-01-14,CZ,1 Pack,1.0,,,,
 2026-01-13,CZ,Signature Cozy,1.0,,,,
 2026-01-13,CC,Central Coast,3.0,,,,
@@ -1539,12 +1598,12 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-01-12,DP,Desert Poppy,5.0,,,,
 2026-01-12,CC,Central Coast,5.0,,,,
 2026-01-12,GH,Golden Hour,1.0,,,,
-2026-01-12,DP,1 Pack - Only for CX Replacements,5.0,,,,
+2026-01-12,DP,Mozi Wash Detergent,5.0,,,,
 2026-01-12,CZ,1 Pack,2.0,,,,
 2026-01-12,GH,Golden Hour,1.0,,,,
 2026-01-12,CZ,Signature Cozy,5.0,,,,
 2026-01-11,GH,Golden Hour,1.0,,,,
-2026-01-11,GH,1 Pack - Only for CX Replacements,2.0,,,,
+2026-01-11,GH,Mozi Wash Detergent,2.0,,,,
 2026-01-11,CZ,Signature Cozy,5.0,,,,
 2026-01-11,CC,Central Coast,4.0,,,,
 2026-01-11,MM,Malibu Mornings,2.0,,,,
@@ -1625,7 +1684,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-01-05,CZ,Signature Cozy,2.0,,,,
 2026-01-05,GH,Golden Hour,1.0,,,,
 2026-01-05,GH,Golden Hour,2.0,,,,
-2026-01-05,GH,1 Pack - Only for CX Replacements,2.0,,,,
+2026-01-05,GH,Mozi Wash Detergent,2.0,,,,
 2026-01-05,DP,Desert Poppy,5.0,,,,
 2026-01-05,CZ,Signature Cozy,2.0,,,,
 2026-01-05,HR,Hollywood Rouge,5.0,,,,
@@ -1837,7 +1896,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-12-20,CZ,Signature Cozy,5.0,,,,
 2025-12-20,HR,Hollywood Rouge,5.0,,,,
 2025-12-19,CZ,Signature Cozy,5.0,,,,
-2025-12-19,DP,1 Pack - Only for CX Replacements,5.0,,,,
+2025-12-19,DP,Mozi Wash Detergent,5.0,,,,
 2025-12-19,HR,1 Pack,5.0,,,,
 2025-12-19,CZ,Signature Cozy,3.0,,,,
 2025-12-19,CZ,Signature Cozy,3.0,,,,
