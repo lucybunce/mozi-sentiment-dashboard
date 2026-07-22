@@ -653,7 +653,7 @@ with tab2:
     # ══════════════════════════════════════════════════════════════════════
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">Trend by Scent</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Weekly avg rating and NPS over time (by review/response date). Dashed lines mark PO batch changes; the bottom panel tracks shipment #.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Weekly avg rating and NPS over time (by review/response date), since Jan 2026. Small labels at the bottom mark PO batch changes; markers at the top mark shipment #.</div>', unsafe_allow_html=True)
 
     trend_sku_label = st.selectbox('Select scent', options=sku_options, index=0, key='trend_sku_select')
     trend_sku = sku_label_to_code[trend_sku_label]
@@ -689,59 +689,63 @@ with tab2:
     if weekly_rating.empty and weekly_nps10.empty and weekly_nps40.empty:
         st.info('No data for this scent yet.')
     else:
-        fig_trend = make_subplots(
-            rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.06,
-            row_heights=[0.68, 0.32],
-            specs=[[{'secondary_y': True}], [{'secondary_y': False}]],
-        )
+        CHART_START = pd.Timestamp(2026, 1, 1)
+        candidate_maxes = [d['week'].max() for d in (weekly_rating, weekly_nps10, weekly_nps40) if not d.empty]
+        if not ship_hist.empty:
+            candidate_maxes.append(ship_hist['week_start'].max())
+        chart_end = (max(candidate_maxes) if candidate_maxes else CHART_START) + timedelta(days=10)
+
+        fig_trend = make_subplots(specs=[[{'secondary_y': True}]])
 
         if not weekly_rating.empty:
             fig_trend.add_trace(go.Scatter(
                 x=weekly_rating['week'], y=weekly_rating['avg_rating'], name='Avg Rating',
                 mode='lines+markers', line=dict(color='#1C1C2E', width=2), marker=dict(size=5),
-            ), row=1, col=1, secondary_y=False)
+            ), secondary_y=False)
 
         if not weekly_nps10.empty:
             fig_trend.add_trace(go.Scatter(
                 x=weekly_nps10['week'], y=weekly_nps10['nps'], name='NPS 10-Day',
                 mode='lines+markers', line=dict(color='#4F86C6', width=2, dash='dot'), marker=dict(size=5),
-            ), row=1, col=1, secondary_y=True)
+            ), secondary_y=True)
 
         if not weekly_nps40.empty:
             fig_trend.add_trace(go.Scatter(
                 x=weekly_nps40['week'], y=weekly_nps40['nps'], name='NPS 40-Day',
                 mode='lines+markers', line=dict(color='#C8A96E', width=2, dash='dot'), marker=dict(size=5),
-            ), row=1, col=1, secondary_y=True)
+            ), secondary_y=True)
 
+        # PO batch changes — small labels at the bottom
         for idx, (po_name, d_from, d_to) in enumerate(sorted(PO_SEGMENTS.get(trend_sku, []), key=lambda s: s[1])):
-            fig_trend.add_vline(
-                x=pd.Timestamp(d_from), line_dash='dash', line_color='#AAA', opacity=0.7,
-                row=1, col=1,
+            if d_from < CHART_START.date():
+                continue
+            fig_trend.add_vline(x=pd.Timestamp(d_from), line_dash='dash', line_color='#AAA', opacity=0.7)
+            fig_trend.add_annotation(
+                x=pd.Timestamp(d_from), y=0.0, xref='x', yref='paper',
+                text=po_name, showarrow=False, font=dict(size=8, color='#999'),
+                textangle=-90, xanchor='left', yanchor='bottom', yshift=2,
             )
+
+        # Shipment # changes — markers at the top, same treatment as PO but visually distinct
+        for idx, (ship_num, d_from, d_to) in enumerate(sorted(SHIP_SEGMENTS.get(trend_sku, []), key=lambda s: s[1])):
+            if d_from < CHART_START.date():
+                continue
+            fig_trend.add_vline(x=pd.Timestamp(d_from), line_dash='dot', line_color='#9B2335', opacity=0.5)
             fig_trend.add_annotation(
                 x=pd.Timestamp(d_from), y=1.0, xref='x', yref='paper',
-                text=po_name, showarrow=False, font=dict(size=10, color='#888'),
-                textangle=-90, xanchor='left', yanchor='top', yshift=-(idx % 3) * 16,
-                row=1, col=1,
+                text=f'Shipment {ship_num}', showarrow=False, font=dict(size=8, color='#9B2335'),
+                textangle=-90, xanchor='left', yanchor='top', yshift=-(idx % 3) * 12,
             )
 
-        if not ship_hist.empty:
-            fig_trend.add_trace(go.Scatter(
-                x=ship_hist['week_start'], y=ship_hist['shipment_num'], name='Shipment #',
-                mode='lines+markers', line=dict(color='#9B2335', width=2, shape='hv'), marker=dict(size=4),
-                showlegend=False,
-            ), row=2, col=1)
-
-        fig_trend.update_yaxes(title_text='Avg Rating ★', range=[1, 5.2], row=1, col=1, secondary_y=False)
-        fig_trend.update_yaxes(title_text='NPS', range=[-105, 105], row=1, col=1, secondary_y=True)
-        fig_trend.update_yaxes(title_text='Shipment #', row=2, col=1)
-        fig_trend.update_xaxes(title_text='', row=2, col=1)
+        fig_trend.update_yaxes(title_text='Avg Rating ★', range=[1, 5.2], secondary_y=False)
+        fig_trend.update_yaxes(title_text='NPS', range=[-105, 105], secondary_y=True)
+        fig_trend.update_xaxes(title_text='', range=[CHART_START, chart_end])
         fig_trend.update_layout(
             plot_bgcolor='white', paper_bgcolor='white',
             hovermode='x unified',
             legend=dict(orientation='h', yanchor='bottom', y=1.05, xanchor='left', x=0),
             margin=dict(l=0, r=0, t=60, b=0),
-            height=560,
+            height=480,
         )
         st.plotly_chart(fig_trend, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
