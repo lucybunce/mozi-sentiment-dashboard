@@ -653,7 +653,7 @@ with tab2:
     # ══════════════════════════════════════════════════════════════════════
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">Trend by Scent</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Weekly avg rating and NPS over time (by review/response date), since Jan 2026. Small labels at the bottom mark PO batch changes; markers at the top mark shipment #.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Weekly avg rating and NPS over time (by review/response date), since Jan 2026. PO batch and shipment # changes are marked at the bottom, next to the month labels.</div>', unsafe_allow_html=True)
 
     trend_sku_label = st.selectbox('Select scent', options=sku_options, index=0, key='trend_sku_select')
     trend_sku = sku_label_to_code[trend_sku_label]
@@ -715,26 +715,30 @@ with tab2:
                 mode='lines+markers', line=dict(color='#C8A96E', width=2, dash='dot'), marker=dict(size=5),
             ), secondary_y=True)
 
-        # PO batch changes — small labels at the bottom
-        for idx, (po_name, d_from, d_to) in enumerate(sorted(PO_SEGMENTS.get(trend_sku, []), key=lambda s: s[1])):
-            if d_from < CHART_START.date():
-                continue
-            fig_trend.add_vline(x=pd.Timestamp(d_from), line_dash='dash', line_color='#AAA', opacity=0.7)
+        # PO batch + shipment changes — one small label at the bottom per date, next to
+        # the month ticks. The first segment of each (the batch/shipment already in place
+        # when tracking starts) isn't a real "change", so it's skipped. When a PO change
+        # and a shipment change land on the same date (common — a new PO's first shipment),
+        # they're combined into one label instead of stacking, to keep this uncluttered.
+        def real_changes(segments):
+            return sorted(segments, key=lambda s: s[1])[1:]
+
+        marks = {}
+        for po_name, d_from, d_to in real_changes(PO_SEGMENTS.get(trend_sku, [])):
+            if d_from >= CHART_START.date():
+                marks.setdefault(d_from, {})['po'] = po_name
+        for ship_num, d_from, d_to in real_changes(SHIP_SEGMENTS.get(trend_sku, [])):
+            if d_from >= CHART_START.date():
+                marks.setdefault(d_from, {})['ship'] = ship_num
+
+        for d_from in sorted(marks):
+            parts = [marks[d_from][k] if k == 'po' else f'Ship {marks[d_from][k]}'
+                     for k in ('po', 'ship') if k in marks[d_from]]
+            fig_trend.add_vline(x=pd.Timestamp(d_from), line_dash='dash', line_color='#CCC', opacity=0.9)
             fig_trend.add_annotation(
                 x=pd.Timestamp(d_from), y=0.0, xref='x', yref='paper',
-                text=po_name, showarrow=False, font=dict(size=8, color='#999'),
-                textangle=-90, xanchor='left', yanchor='bottom', yshift=2,
-            )
-
-        # Shipment # changes — markers at the top, same treatment as PO but visually distinct
-        for idx, (ship_num, d_from, d_to) in enumerate(sorted(SHIP_SEGMENTS.get(trend_sku, []), key=lambda s: s[1])):
-            if d_from < CHART_START.date():
-                continue
-            fig_trend.add_vline(x=pd.Timestamp(d_from), line_dash='dot', line_color='#9B2335', opacity=0.5)
-            fig_trend.add_annotation(
-                x=pd.Timestamp(d_from), y=1.0, xref='x', yref='paper',
-                text=f'Shipment {ship_num}', showarrow=False, font=dict(size=8, color='#9B2335'),
-                textangle=-90, xanchor='left', yanchor='top', yshift=-(idx % 3) * 12,
+                text='  /  '.join(parts), showarrow=False, font=dict(size=8, color='#888'),
+                textangle=-90, xanchor='left', yanchor='top', yshift=-34,
             )
 
         fig_trend.update_yaxes(title_text='Avg Rating ★', range=[1, 5.2], secondary_y=False)
@@ -744,8 +748,8 @@ with tab2:
             plot_bgcolor='white', paper_bgcolor='white',
             hovermode='x unified',
             legend=dict(orientation='h', yanchor='bottom', y=1.05, xanchor='left', x=0),
-            margin=dict(l=0, r=0, t=60, b=0),
-            height=480,
+            margin=dict(l=0, r=0, t=60, b=160),
+            height=520,
         )
         st.plotly_chart(fig_trend, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
