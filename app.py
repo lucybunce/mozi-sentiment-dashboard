@@ -20,6 +20,13 @@ SCENT_COLORS = {
     'SD': '#F4A460', 'VM': '#9B59B6',
 }
 
+# Sample Kit: shown in By Scent only — it's not a single-scent SKU, so it has
+# no PO batch / shipment # in the inventory tracker (By Formula tab excludes it).
+SAMPLE_KIT_SKU = 'SK'
+SCENT_NAMES[SAMPLE_KIT_SKU] = 'Sample Kit'
+SCENT_COLORS[SAMPLE_KIT_SKU] = '#8C8C9E'
+BY_SCENT_ORDER = SCENT_ORDER + [SAMPLE_KIT_SKU]
+
 # ── Password gate ─────────────────────────────────────────────────────────────
 def check_password():
     if st.session_state.get('authenticated'):
@@ -133,6 +140,43 @@ def load_nps_po_historical():
     return df
 
 @st.cache_data(ttl=3600)
+def load_po_shipment_tracker():
+    path = os.path.join(DATA_DIR, 'po_shipment_tracker.csv')
+    if not os.path.exists(path):
+        return pd.DataFrame()
+    df = pd.read_csv(path, parse_dates=['week_start'])
+    df['sku'] = df['sku'].str.strip().str.upper()
+    df['shipment_num'] = pd.to_numeric(df['shipment_num'], errors='coerce').fillna(0).astype(int)
+    return df
+
+def build_segments(df_track, value_col):
+    """For each SKU, collapse consecutive tracker weeks with the same value into
+    (value, date_from, date_to) segments. The last segment per SKU stays open-ended
+    so reviews/responses newer than the tracker's last column still get attributed."""
+    segments = {}
+    for sku, grp in df_track.sort_values('week_start').groupby('sku'):
+        transitions = []  # (value, start_date)
+        prev_val = object()
+        for _, row in grp.iterrows():
+            val = row[value_col]
+            if val != prev_val:
+                transitions.append([val, row['week_start'].date()])
+                prev_val = val
+        segs = []
+        for i, (val, d_from) in enumerate(transitions):
+            d_to = transitions[i + 1][1] - timedelta(days=1) if i + 1 < len(transitions) else date(2099, 1, 1)
+            segs.append((val, d_from, d_to))
+        segments[sku] = segs
+    return segments
+
+def assign_from_segments(segments_for_sku, dt):
+    """Return the segment value covering date dt, or None if dt precedes all tracked weeks."""
+    for val, d_from, d_to in segments_for_sku:
+        if d_from <= dt <= d_to:
+            return val
+    return None
+
+@st.cache_data(ttl=3600)
 def load_nps_all_individual():
     """Combine Survicate historical + Omniconvert individual responses."""
     parts = [load_nps_survicate(), load_nps_individual()]
@@ -146,6 +190,10 @@ df_nps       = load_nps()
 df_indiv     = load_nps_individual()
 df_hist_nps  = load_nps_po_historical()
 df_nps_all   = load_nps_all_individual()
+df_track     = load_po_shipment_tracker()
+
+PO_SEGMENTS   = build_segments(df_track, 'po_name')       if not df_track.empty else {}
+SHIP_SEGMENTS = build_segments(df_track, 'shipment_num')  if not df_track.empty else {}
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 tab1, tab2 = st.tabs(["By Scent", "By Formula (PO Batch)"])
@@ -192,7 +240,7 @@ with tab1:
 
     # Build summary table
     summary_rows = []
-    for sku in SCENT_ORDER:
+    for sku in BY_SCENT_ORDER:
         sub = df_f[df_f['sku'] == sku]
         n   = len(sub)
         avg_rating = sub['rating'].mean() if n else None
@@ -382,65 +430,86 @@ with tab1:
 # TAB 2: BY FORMULA
 # ══════════════════════════════════════════════════════════════════════════════
 with tab2:
-    st.markdown('<div class="section-card">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">By Formula (PO Batch)</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Star ratings and NPS by production batch. NPS from Omniconvert (current batch) and Survicate (historical).</div>', unsafe_allow_html=True)
+    # PO batch and shipment # windows come from the weekly inventory/consumption
+    # tracker (data/po_shipment_tracker.csv, built by prepare_sentiment_data.py) —
+    # not hardcoded, so new batches/shipments show up automatically once the
+    # tracker file is refreshed. Sample Kit isn't in the tracker (it's not a
+    # single-scent SKU), so it's excluded from both tables below.
 
-    # PO batch definitions
-    PO_BATCHES = [
-        ('Jan 18 Stock',                    ['AW','CC','CZ','DP','FC','GH','HR','MM','SD','VM']),
-        ('March Order - 6 Degrees',         ['AW','CC','CZ','DP','GH','HR','SD','VM']),
-        ('January Order - Product Society', ['DP','MM']),
-    ]
-    PO_DATE_RANGES = {
-        'Jan 18 Stock':                    (date(2025,10,1), date(2026,3,14)),
-        'March Order - 6 Degrees':         (date(2026,3,15), date(2099,1,1)),
-        'January Order - Product Society': (date(2026,1,1), date(2026,3,14)),
-    }
+    def merge_segments_by_value(segments_by_sku):
+        """Collapse each SKU's (value, d_from, d_to) segment list into {value: (min_from, max_to)}."""
+        merged_by_sku = {}
+        for sku, segs in segments_by_sku.items():
+            merged = {}
+            for val, d_from, d_to in segs:
+                if val in merged:
+                    merged[val] = (min(merged[val][0], d_from), max(merged[val][1], d_to))
+                else:
+                    merged[val] = (d_from, d_to)
+            merged_by_sku[sku] = merged
+        return merged_by_sku
+
+    sku_po_map   = merge_segments_by_value(PO_SEGMENTS)
+    sku_ship_map = merge_segments_by_value(SHIP_SEGMENTS)
+
+    # Chronological PO name order (by each PO's earliest start date across SKUs)
+    po_first_seen = {}
+    for sku, ranges in sku_po_map.items():
+        for name, (d_from, d_to) in ranges.items():
+            if name not in po_first_seen or d_from < po_first_seen[name]:
+                po_first_seen[name] = d_from
+    po_order = sorted(po_first_seen, key=lambda n: po_first_seen[n])
 
     # ── NPS lookups ───────────────────────────────────────────────────────────
-    # Live: compute NPS from Omniconvert individual responses, assigning PO by approx order date
-    def _assign_po(row):
+    # Live: compute NPS from Omniconvert individual responses, assigning PO/shipment
+    # by approximate order date (response_date - survey window), per SKU's own tracker segments.
+    def _approx_order_date(row):
         try:
-            od = (pd.to_datetime(row['date']) - pd.Timedelta(days=int(row['survey_type']))).date()
+            return (pd.to_datetime(row['date']) - pd.Timedelta(days=int(row['survey_type_days']))).date()
         except Exception:
             return None
-        for po_name, (d_from, d_to) in PO_DATE_RANGES.items():
-            if d_from <= od <= d_to:
-                return po_name
-        return None
 
-    nps_live = {}
-    if not df_indiv.empty:
+    def build_live_nps(segments_by_sku):
+        live = {}
+        if df_indiv.empty:
+            return live
         dfi = df_indiv.copy()
-        dfi['po_name'] = dfi.apply(_assign_po, axis=1)
-        dfi = dfi.dropna(subset=['po_name'])
-        for (po, sku, stype), grp in dfi.groupby(['po_name','sku','survey_type_days']):
+        dfi['_od'] = dfi.apply(_approx_order_date, axis=1)
+        dfi = dfi.dropna(subset=['_od'])
+        dfi['_bucket'] = dfi.apply(
+            lambda r: assign_from_segments(segments_by_sku.get(r['sku'], []), r['_od']), axis=1)
+        dfi = dfi.dropna(subset=['_bucket'])
+        for (bucket, sku, stype), grp in dfi.groupby(['_bucket','sku','survey_type_days']):
             scores = grp['score'].dropna().astype(int).tolist()
             if not scores:
                 continue
             promoters  = sum(1 for s in scores if s >= 9)
             detractors = sum(1 for s in scores if s <= 6)
-            nps_live[(po, sku, str(stype))] = (
+            live[(bucket, sku, str(stype))] = (
                 round((promoters - detractors) / len(scores) * 100, 1),
                 len(scores),
             )
+        return live
 
-    # Historical: pre-aggregated Survicate NPS from nps_po_historical.csv
-    nps_hist = {}
+    nps_live_po   = build_live_nps(PO_SEGMENTS)
+    nps_live_ship = build_live_nps(SHIP_SEGMENTS)
+
+    # Historical: pre-aggregated Survicate NPS from nps_po_historical.csv (PO table only —
+    # shipment # tracking postdates this historical data, so there's no shipment-level fallback)
+    nps_hist_po = {}
     if not df_hist_nps.empty:
         for _, r in df_hist_nps.iterrows():
-            nps_hist[(r['po_name'], r['sku'], str(r['survey_type_days']))] = (
+            nps_hist_po[(r['po_name'], r['sku'], str(r['survey_type_days']))] = (
                 float(r['nps']), int(r['n_responses'])
             )
 
-    def get_nps(po_name, sku, stype):
+    def get_nps(live_dict, hist_dict, bucket, sku, stype):
         """Return (nps_val, n) — live data takes priority over historical."""
-        key = (po_name, sku, stype)
-        if key in nps_live:
-            return nps_live[key]
-        if key in nps_hist:
-            return nps_hist[key]
+        key = (bucket, sku, str(stype))
+        if key in live_dict:
+            return live_dict[key]
+        if hist_dict and key in hist_dict:
+            return hist_dict[key]
         return None, 0
 
     def fmt_nps(val, n):
@@ -457,8 +526,8 @@ with tab2:
             return 'color: #E67E22; font-weight: 600'
         return 'color: #E74C3C; font-weight: 600'
 
-    # ── SKU filter ────────────────────────────────────────────────────────────
-    all_skus = sorted({sku for _, skus in PO_BATCHES for sku in skus}, key=SCENT_ORDER.index)
+    # ── SKU filter (shared by both tables below) ─────────────────────────────
+    all_skus = sorted(set(sku_po_map) | set(sku_ship_map), key=SCENT_ORDER.index)
     sku_options = [f'{SCENT_NAMES.get(s, s)} ({s})' for s in all_skus]
     sku_label_to_code = {f'{SCENT_NAMES.get(s, s)} ({s})': s for s in all_skus}
 
@@ -470,13 +539,31 @@ with tab2:
     )
     selected_skus = [sku_label_to_code[l] for l in selected_labels] if selected_labels else all_skus
 
-    # ── Build table ───────────────────────────────────────────────────────────
+    def style_bucket_table(df_s, df_source):
+        styles = pd.DataFrame('', index=df_s.index, columns=df_s.columns)
+        for i in df_s.index:
+            val_str = str(df_s.at[i, 'Avg Rating']).replace('★','').strip()
+            try:
+                styles.at[i, 'Avg Rating'] = color_rating(float(val_str))
+            except ValueError:
+                pass
+            styles.at[i, 'NPS 10-Day'] = color_nps_val(df_source.at[i, '_nps10'])
+            styles.at[i, 'NPS 40-Day'] = color_nps_val(df_source.at[i, '_nps40'])
+        return styles
+
+    # ══════════════════════════════════════════════════════════════════════
+    # PO Batch table
+    # ══════════════════════════════════════════════════════════════════════
+    st.markdown('<div class="section-card">', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">By PO Batch</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Star ratings and NPS by production batch. NPS from Omniconvert (current batch) and Survicate (historical).</div>', unsafe_allow_html=True)
+
     po_rows = []
-    for po_name, skus in PO_BATCHES:
-        d_from_po, d_to_po = PO_DATE_RANGES[po_name]
-        for sku in skus:
-            if sku not in selected_skus:
+    for po_name in po_order:
+        for sku in SCENT_ORDER:
+            if sku not in selected_skus or po_name not in sku_po_map.get(sku, {}):
                 continue
+            d_from_po, d_to_po = sku_po_map[sku][po_name]
             sub = df_ok[
                 (df_ok['sku'] == sku) &
                 (df_ok['date'].dt.date >= d_from_po) &
@@ -484,8 +571,8 @@ with tab2:
             ]
             n_rev = len(sub)
             avg_r = round(sub['rating'].mean(), 2) if n_rev else None
-            nps10_v, n10 = get_nps(po_name, sku, '10')
-            nps40_v, n40 = get_nps(po_name, sku, '40')
+            nps10_v, n10 = get_nps(nps_live_po, nps_hist_po, po_name, sku, '10')
+            nps40_v, n40 = get_nps(nps_live_po, nps_hist_po, po_name, sku, '40')
             po_rows.append({
                 'PO Batch':   po_name,
                 'Scent':      SCENT_NAMES.get(sku, sku),
@@ -500,25 +587,62 @@ with tab2:
     df_po = pd.DataFrame(po_rows).reset_index(drop=True)
     display_cols = ['PO Batch','Scent','# Reviews','Avg Rating','NPS 10-Day','NPS 40-Day']
 
-    def style_po(df_s):
-        styles = pd.DataFrame('', index=df_s.index, columns=df_s.columns)
-        for i in df_s.index:
-            val_str = str(df_s.at[i, 'Avg Rating']).replace('★','').strip()
-            try:
-                styles.at[i, 'Avg Rating'] = color_rating(float(val_str))
-            except ValueError:
-                pass
-            styles.at[i, 'NPS 10-Day'] = color_nps_val(df_po.at[i, '_nps10'])
-            styles.at[i, 'NPS 40-Day'] = color_nps_val(df_po.at[i, '_nps40'])
-        return styles
-
     if df_po.empty:
         st.info('No scents selected.')
     else:
         st.dataframe(
-            df_po[display_cols].style.apply(style_po, axis=None)
+            df_po[display_cols].style.apply(lambda s: style_bucket_table(s, df_po), axis=None)
             .set_properties(**{'text-align': 'center'})
             .set_properties(subset=['PO Batch','Scent'], **{'text-align': 'left'}),
+            use_container_width=True, hide_index=True,
+        )
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # ══════════════════════════════════════════════════════════════════════
+    # Shipment # table
+    # ══════════════════════════════════════════════════════════════════════
+    st.markdown('<div class="section-card">', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">By Shipment #</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Star ratings and NPS by individual shipment (a PO batch can span several shipments as it\'s restocked). Shipment 0 predates shipment-level tracking. NPS from Omniconvert only — shipment tracking has no historical Survicate data.</div>', unsafe_allow_html=True)
+
+    ship_rows = []
+    for sku in SCENT_ORDER:
+        if sku not in selected_skus:
+            continue
+        for ship_num in sorted(sku_ship_map.get(sku, {})):
+            d_from_s, d_to_s = sku_ship_map[sku][ship_num]
+            sub = df_ok[
+                (df_ok['sku'] == sku) &
+                (df_ok['date'].dt.date >= d_from_s) &
+                (df_ok['date'].dt.date <= d_to_s)
+            ]
+            n_rev = len(sub)
+            avg_r = round(sub['rating'].mean(), 2) if n_rev else None
+            nps10_v, n10 = get_nps(nps_live_ship, None, ship_num, sku, '10')
+            nps40_v, n40 = get_nps(nps_live_ship, None, ship_num, sku, '40')
+            label = 'Shipment 0 (pre-tracking)' if ship_num == 0 else f'Shipment {ship_num}'
+            ship_rows.append({
+                'Shipment':   label,
+                'Scent':      SCENT_NAMES.get(sku, sku),
+                '# Reviews':  n_rev,
+                'Avg Rating': f'{avg_r:.2f} ★' if avg_r else '—',
+                'NPS 10-Day': fmt_nps(nps10_v, n10),
+                'NPS 40-Day': fmt_nps(nps40_v, n40),
+                '_nps10':     nps10_v,
+                '_nps40':     nps40_v,
+            })
+
+    df_ship = pd.DataFrame(ship_rows).reset_index(drop=True)
+
+    if df_ship.empty:
+        st.info('No scents selected.')
+    else:
+        ship_display_cols = ['Scent','Shipment','# Reviews','Avg Rating','NPS 10-Day','NPS 40-Day']
+        st.dataframe(
+            df_ship[ship_display_cols]
+            .style.apply(lambda s: style_bucket_table(s, df_ship), axis=None)
+            .set_properties(**{'text-align': 'center'})
+            .set_properties(subset=['Shipment','Scent'], **{'text-align': 'left'}),
             use_container_width=True, hide_index=True,
         )
     st.markdown('</div>', unsafe_allow_html=True)
