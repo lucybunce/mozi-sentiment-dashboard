@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 from datetime import datetime, timedelta, date
 import os
 
@@ -645,4 +646,102 @@ with tab2:
             .set_properties(subset=['Shipment','Scent'], **{'text-align': 'left'}),
             use_container_width=True, hide_index=True,
         )
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # ══════════════════════════════════════════════════════════════════════
+    # Trend chart: rating + NPS history for one scent, with PO/shipment context
+    # ══════════════════════════════════════════════════════════════════════
+    st.markdown('<div class="section-card">', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">Trend by Scent</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Weekly avg rating and NPS over time (by review/response date). Dashed lines mark PO batch changes; the bottom panel tracks shipment #.</div>', unsafe_allow_html=True)
+
+    trend_sku_label = st.selectbox('Select scent', options=sku_options, index=0, key='trend_sku_select')
+    trend_sku = sku_label_to_code[trend_sku_label]
+
+    df_ok_sku = df_ok[df_ok['sku'] == trend_sku].copy()
+    df_ok_sku['week'] = df_ok_sku['date'].dt.to_period('W').apply(lambda p: p.start_time)
+    weekly_rating = (df_ok_sku.groupby('week')
+                     .agg(avg_rating=('rating','mean'), n=('rating','count'))
+                     .reset_index())
+    weekly_rating = weekly_rating[weekly_rating['n'] >= 2]
+
+    def weekly_nps_for(sku, days):
+        if df_nps_all.empty:
+            return pd.DataFrame(columns=['week','nps','n'])
+        sub = df_nps_all[(df_nps_all['sku'] == sku) & (df_nps_all['survey_type_days'] == str(days))].copy()
+        if sub.empty:
+            return pd.DataFrame(columns=['week','nps','n'])
+        sub['week'] = sub['date'].dt.to_period('W').apply(lambda p: p.start_time)
+        rows = []
+        for wk, grp in sub.groupby('week'):
+            scores = grp['score'].dropna().astype(int).tolist()
+            if len(scores) < 2:
+                continue
+            promoters  = sum(1 for s in scores if s >= 9)
+            detractors = sum(1 for s in scores if s <= 6)
+            rows.append({'week': wk, 'nps': round((promoters - detractors) / len(scores) * 100, 1), 'n': len(scores)})
+        return pd.DataFrame(rows)
+
+    weekly_nps10 = weekly_nps_for(trend_sku, 10)
+    weekly_nps40 = weekly_nps_for(trend_sku, 40)
+    ship_hist = df_track[df_track['sku'] == trend_sku].sort_values('week_start') if not df_track.empty else pd.DataFrame()
+
+    if weekly_rating.empty and weekly_nps10.empty and weekly_nps40.empty:
+        st.info('No data for this scent yet.')
+    else:
+        fig_trend = make_subplots(
+            rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.06,
+            row_heights=[0.68, 0.32],
+            specs=[[{'secondary_y': True}], [{'secondary_y': False}]],
+        )
+
+        if not weekly_rating.empty:
+            fig_trend.add_trace(go.Scatter(
+                x=weekly_rating['week'], y=weekly_rating['avg_rating'], name='Avg Rating',
+                mode='lines+markers', line=dict(color='#1C1C2E', width=2), marker=dict(size=5),
+            ), row=1, col=1, secondary_y=False)
+
+        if not weekly_nps10.empty:
+            fig_trend.add_trace(go.Scatter(
+                x=weekly_nps10['week'], y=weekly_nps10['nps'], name='NPS 10-Day',
+                mode='lines+markers', line=dict(color='#4F86C6', width=2, dash='dot'), marker=dict(size=5),
+            ), row=1, col=1, secondary_y=True)
+
+        if not weekly_nps40.empty:
+            fig_trend.add_trace(go.Scatter(
+                x=weekly_nps40['week'], y=weekly_nps40['nps'], name='NPS 40-Day',
+                mode='lines+markers', line=dict(color='#C8A96E', width=2, dash='dot'), marker=dict(size=5),
+            ), row=1, col=1, secondary_y=True)
+
+        for idx, (po_name, d_from, d_to) in enumerate(sorted(PO_SEGMENTS.get(trend_sku, []), key=lambda s: s[1])):
+            fig_trend.add_vline(
+                x=pd.Timestamp(d_from), line_dash='dash', line_color='#AAA', opacity=0.7,
+                row=1, col=1,
+            )
+            fig_trend.add_annotation(
+                x=pd.Timestamp(d_from), y=1.0, xref='x', yref='paper',
+                text=po_name, showarrow=False, font=dict(size=10, color='#888'),
+                textangle=-90, xanchor='left', yanchor='top', yshift=-(idx % 3) * 16,
+                row=1, col=1,
+            )
+
+        if not ship_hist.empty:
+            fig_trend.add_trace(go.Scatter(
+                x=ship_hist['week_start'], y=ship_hist['shipment_num'], name='Shipment #',
+                mode='lines+markers', line=dict(color='#9B2335', width=2, shape='hv'), marker=dict(size=4),
+                showlegend=False,
+            ), row=2, col=1)
+
+        fig_trend.update_yaxes(title_text='Avg Rating ★', range=[1, 5.2], row=1, col=1, secondary_y=False)
+        fig_trend.update_yaxes(title_text='NPS', range=[-105, 105], row=1, col=1, secondary_y=True)
+        fig_trend.update_yaxes(title_text='Shipment #', row=2, col=1)
+        fig_trend.update_xaxes(title_text='', row=2, col=1)
+        fig_trend.update_layout(
+            plot_bgcolor='white', paper_bgcolor='white',
+            hovermode='x unified',
+            legend=dict(orientation='h', yanchor='bottom', y=1.05, xanchor='left', x=0),
+            margin=dict(l=0, r=0, t=60, b=0),
+            height=560,
+        )
+        st.plotly_chart(fig_trend, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
