@@ -1,0 +1,251 @@
+week_start,sku,po_name,shipment_num
+2026-01-18,AW,Jan 18 Stock,0
+2026-01-25,AW,Jan 18 Stock,0
+2026-02-01,AW,Jan 18 Stock,0
+2026-02-08,AW,Jan 18 Stock,0
+2026-02-15,AW,March Order - 6 Degrees,1
+2026-02-22,AW,March Order - 6 Degrees,1
+2026-03-01,AW,March Order - 6 Degrees,2
+2026-03-08,AW,March Order - 6 Degrees,2
+2026-03-15,AW,March Order - 6 Degrees,2
+2026-03-22,AW,March Order - 6 Degrees,3
+2026-03-29,AW,March Order - 6 Degrees,3
+2026-04-05,AW,March Order - 6 Degrees,3
+2026-04-12,AW,March Order - 6 Degrees,3
+2026-04-19,AW,March Order - 6 Degrees,3
+2026-04-26,AW,March Order - 6 Degrees,3
+2026-05-03,AW,March Order - 6 Degrees,4
+2026-05-10,AW,March Order - 6 Degrees,4
+2026-05-17,AW,March Order - 6 Degrees,4
+2026-05-24,AW,March Order - 6 Degrees,4
+2026-05-31,AW,March Order - 6 Degrees,4
+2026-06-07,AW,March Order - 6 Degrees,4
+2026-06-14,AW,June Order - 6 Degrees,5
+2026-06-21,AW,June Order - 6 Degrees,5
+2026-06-28,AW,June Order - 6 Degrees,5
+2026-07-05,AW,June Order - 6 Degrees,5
+2026-01-18,CC,Jan 18 Stock,0
+2026-01-25,CC,Jan 18 Stock,0
+2026-02-01,CC,Jan 18 Stock,0
+2026-02-08,CC,Jan 18 Stock,0
+2026-02-15,CC,Jan 18 Stock,0
+2026-02-22,CC,Jan 18 Stock,0
+2026-03-01,CC,Jan 18 Stock,0
+2026-03-08,CC,Jan 18 Stock,0
+2026-03-15,CC,Jan 18 Stock,0
+2026-03-22,CC,Jan 18 Stock,0
+2026-03-29,CC,March Order - 6 Degrees,1
+2026-04-05,CC,March Order - 6 Degrees,1
+2026-04-12,CC,March Order - 6 Degrees,1
+2026-04-19,CC,March Order - 6 Degrees,1
+2026-04-26,CC,March Order - 6 Degrees,1
+2026-05-03,CC,March Order - 6 Degrees,1
+2026-05-10,CC,March Order - 6 Degrees,1
+2026-05-17,CC,March Order - 6 Degrees,1
+2026-05-24,CC,March Order - 6 Degrees,2
+2026-05-31,CC,June Order - 6 Degrees,3
+2026-06-07,CC,June Order - 6 Degrees,3
+2026-06-14,CC,June Order - 6 Degrees,3
+2026-06-21,CC,June Order - 6 Degrees,3
+2026-06-28,CC,June Order - 6 Degrees,4
+2026-07-05,CC,June Order - 6 Degrees,4
+2026-01-18,CZ,Jan 18 Stock,0
+2026-01-25,CZ,Jan 18 Stock,0
+2026-02-01,CZ,Jan 18 Stock,0
+2026-02-08,CZ,Jan 18 Stock,0
+2026-02-15,CZ,Jan 18 Stock,0
+2026-02-22,CZ,March Order - 6 Degrees,1
+2026-03-01,CZ,March Order - 6 Degrees,1
+2026-03-08,CZ,March Order - 6 Degrees,1
+2026-03-15,CZ,March Order - 6 Degrees,2
+2026-03-22,CZ,March Order - 6 Degrees,2
+2026-03-29,CZ,March Order - 6 Degrees,2
+2026-04-05,CZ,March Order - 6 Degrees,2
+2026-04-12,CZ,March Order - 6 Degrees,2
+2026-04-19,CZ,March Order - 6 Degrees,3
+2026-04-26,CZ,March Order - 6 Degrees,3
+2026-05-03,CZ,March Order - 6 Degrees,4
+2026-05-10,CZ,March Order - 6 Degrees,4
+2026-05-17,CZ,March Order - 6 Degrees,4
+2026-05-24,CZ,March Order - 6 Degrees,4
+2026-05-31,CZ,June Order - 6 Degrees,5
+2026-06-07,CZ,June Order - 6 Degrees,5
+2026-06-14,CZ,June Order - 6 Degrees,5
+2026-06-21,CZ,June Order - 6 Degrees,6
+2026-06-28,CZ,June Order - 6 Degrees,6
+2026-07-05,CZ,June Order - 6 Degrees,6
+2026-01-18,DP,Jan 18 Stock,0
+2026-01-25,DP,January Order - Product Society,1
+2026-02-01,DP,January Order - Product Society,1
+2026-02-08,DP,January Order - Product Society,1
+2026-02-15,DP,January Order - Product Society,2
+2026-02-22,DP,January Order - Product Society,2
+2026-03-01,DP,January Order - Product Society,2
+2026-03-08,DP,January Order - Product Society,2
+2026-03-15,DP,March Order - 6 Degrees,3
+2026-03-22,DP,March Order - 6 Degrees,3
+2026-03-29,DP,March Order - 6 Degrees,3
+2026-04-05,DP,March Order - 6 Degrees,3
+2026-04-12,DP,March Order - 6 Degrees,3
+2026-04-19,DP,March Order - 6 Degrees,3
+2026-04-26,DP,March Order - 6 Degrees,3
+2026-05-03,DP,March Order - 6 Degrees,3
+2026-05-10,DP,March Order - 6 Degrees,3
+2026-05-17,DP,March Order - 6 Degrees,3
+2026-05-24,DP,March Order - 6 Degrees,3
+2026-05-31,DP,March Order - 6 Degrees,3
+2026-06-07,DP,March Order - 6 Degrees,3
+2026-06-14,DP,March Order - 6 Degrees,3
+2026-06-21,DP,March Order - 6 Degrees,3
+2026-06-28,DP,March Order - 6 Degrees,4
+2026-07-05,DP,March Order - 6 Degrees,4
+2026-01-18,FC,Jan 18 Stock,0
+2026-01-25,FC,Jan 18 Stock,0
+2026-02-01,FC,Jan 18 Stock,0
+2026-02-08,FC,Jan 18 Stock,0
+2026-02-15,FC,Jan 18 Stock,0
+2026-02-22,FC,Jan 18 Stock,0
+2026-03-01,FC,Jan 18 Stock,0
+2026-03-08,FC,Jan 18 Stock,0
+2026-03-15,FC,Jan 18 Stock,0
+2026-03-22,FC,Jan 18 Stock,0
+2026-03-29,FC,Jan 18 Stock,0
+2026-04-05,FC,Jan 18 Stock,0
+2026-04-12,FC,Jan 18 Stock,0
+2026-04-19,FC,Jan 18 Stock,0
+2026-04-26,FC,Jan 18 Stock,0
+2026-05-03,FC,Jan 18 Stock,0
+2026-05-10,FC,March Order - 6 Degrees,1
+2026-05-17,FC,March Order - 6 Degrees,1
+2026-05-24,FC,March Order - 6 Degrees,1
+2026-05-31,FC,March Order - 6 Degrees,1
+2026-06-07,FC,March Order - 6 Degrees,1
+2026-06-14,FC,March Order - 6 Degrees,1
+2026-06-21,FC,March Order - 6 Degrees,1
+2026-06-28,FC,March Order - 6 Degrees,1
+2026-07-05,FC,March Order - 6 Degrees,1
+2026-01-18,GH,Jan 18 Stock,0
+2026-01-25,GH,Jan 18 Stock,0
+2026-02-01,GH,Jan 18 Stock,0
+2026-02-08,GH,Jan 18 Stock,0
+2026-02-15,GH,Jan 18 Stock,0
+2026-02-22,GH,Jan 18 Stock,0
+2026-03-01,GH,March Order - 6 Degrees,1
+2026-03-08,GH,March Order - 6 Degrees,1
+2026-03-15,GH,March Order - 6 Degrees,1
+2026-03-22,GH,March Order - 6 Degrees,1
+2026-03-29,GH,March Order - 6 Degrees,1
+2026-04-05,GH,March Order - 6 Degrees,1
+2026-04-12,GH,March Order - 6 Degrees,1
+2026-04-19,GH,March Order - 6 Degrees,1
+2026-04-26,GH,March Order - 6 Degrees,1
+2026-05-03,GH,March Order - 6 Degrees,1
+2026-05-10,GH,March Order - 6 Degrees,1
+2026-05-17,GH,March Order - 6 Degrees,2
+2026-05-24,GH,March Order - 6 Degrees,2
+2026-05-31,GH,March Order - 6 Degrees,2
+2026-06-07,GH,March Order - 6 Degrees,2
+2026-06-14,GH,March Order - 6 Degrees,2
+2026-06-21,GH,March Order - 6 Degrees,3
+2026-06-28,GH,March Order - 6 Degrees,3
+2026-07-05,GH,March Order - 6 Degrees,3
+2026-01-18,HR,Jan 18 Stock,0
+2026-01-25,HR,Jan 18 Stock,0
+2026-02-01,HR,Jan 18 Stock,0
+2026-02-08,HR,Jan 18 Stock,0
+2026-02-15,HR,Jan 18 Stock,0
+2026-02-22,HR,Jan 18 Stock,0
+2026-03-01,HR,Jan 18 Stock,0
+2026-03-08,HR,Jan 18 Stock,0
+2026-03-15,HR,Jan 18 Stock,0
+2026-03-22,HR,Jan 18 Stock,0
+2026-03-29,HR,Jan 18 Stock,0
+2026-04-05,HR,Jan 18 Stock,0
+2026-04-12,HR,March Order - 6 Degrees,1
+2026-04-19,HR,March Order - 6 Degrees,1
+2026-04-26,HR,March Order - 6 Degrees,1
+2026-05-03,HR,March Order - 6 Degrees,1
+2026-05-10,HR,March Order - 6 Degrees,1
+2026-05-17,HR,March Order - 6 Degrees,1
+2026-05-24,HR,March Order - 6 Degrees,1
+2026-05-31,HR,March Order - 6 Degrees,1
+2026-06-07,HR,March Order - 6 Degrees,1
+2026-06-14,HR,March Order - 6 Degrees,1
+2026-06-21,HR,March Order - 6 Degrees,1
+2026-06-28,HR,March Order - 6 Degrees,1
+2026-07-05,HR,March Order - 6 Degrees,1
+2026-01-18,MM,Jan 18 Stock,0
+2026-01-25,MM,Jan 18 Stock,0
+2026-02-01,MM,Jan 18 Stock,0
+2026-02-08,MM,Jan 18 Stock,0
+2026-02-15,MM,Jan 18 Stock,0
+2026-02-22,MM,Jan 18 Stock,0
+2026-03-01,MM,Jan 18 Stock,0
+2026-03-08,MM,January Order - Product Society,1
+2026-03-15,MM,January Order - Product Society,1
+2026-03-22,MM,January Order - Product Society,1
+2026-03-29,MM,January Order - Product Society,1
+2026-04-05,MM,January Order - Product Society,1
+2026-04-12,MM,January Order - Product Society,1
+2026-04-19,MM,January Order - Product Society,1
+2026-04-26,MM,January Order - Product Society,1
+2026-05-03,MM,January Order - Product Society,1
+2026-05-10,MM,January Order - Product Society,1
+2026-05-17,MM,January Order - Product Society,1
+2026-05-24,MM,January Order - Product Society,1
+2026-05-31,MM,June Order - 6 Degrees,2
+2026-06-07,MM,June Order - 6 Degrees,2
+2026-06-14,MM,June Order - 6 Degrees,2
+2026-06-21,MM,June Order - 6 Degrees,2
+2026-06-28,MM,June Order - 6 Degrees,2
+2026-07-05,MM,June Order - 6 Degrees,2
+2026-01-18,SD,Jan 18 Stock,0
+2026-01-25,SD,Jan 18 Stock,0
+2026-02-01,SD,Jan 18 Stock,0
+2026-02-08,SD,Jan 18 Stock,0
+2026-02-15,SD,Jan 18 Stock,0
+2026-02-22,SD,Jan 18 Stock,0
+2026-03-01,SD,Jan 18 Stock,0
+2026-03-08,SD,Jan 18 Stock,0
+2026-03-15,SD,Jan 18 Stock,0
+2026-03-22,SD,Jan 18 Stock,0
+2026-03-29,SD,Jan 18 Stock,0
+2026-04-05,SD,Jan 18 Stock,0
+2026-04-12,SD,Jan 18 Stock,0
+2026-04-19,SD,March Order - 6 Degrees,1
+2026-04-26,SD,March Order - 6 Degrees,1
+2026-05-03,SD,March Order - 6 Degrees,1
+2026-05-10,SD,March Order - 6 Degrees,2
+2026-05-17,SD,March Order - 6 Degrees,2
+2026-05-24,SD,March Order - 6 Degrees,2
+2026-05-31,SD,March Order - 6 Degrees,2
+2026-06-07,SD,June Order - 6 Degrees,3
+2026-06-14,SD,June Order - 6 Degrees,3
+2026-06-21,SD,June Order - 6 Degrees,3
+2026-06-28,SD,June Order - 6 Degrees,3
+2026-07-05,SD,June Order - 6 Degrees,3
+2026-01-18,VM,Jan 18 Stock,0
+2026-01-25,VM,Jan 18 Stock,0
+2026-02-01,VM,Jan 18 Stock,0
+2026-02-08,VM,Jan 18 Stock,0
+2026-02-15,VM,Jan 18 Stock,0
+2026-02-22,VM,Jan 18 Stock,0
+2026-03-01,VM,Jan 18 Stock,0
+2026-03-08,VM,Jan 18 Stock,0
+2026-03-15,VM,March Order - 6 Degrees,1
+2026-03-22,VM,March Order - 6 Degrees,1
+2026-03-29,VM,March Order - 6 Degrees,1
+2026-04-05,VM,March Order - 6 Degrees,1
+2026-04-12,VM,March Order - 6 Degrees,1
+2026-04-19,VM,March Order - 6 Degrees,1
+2026-04-26,VM,March Order - 6 Degrees,1
+2026-05-03,VM,March Order - 6 Degrees,1
+2026-05-10,VM,March Order - 6 Degrees,2
+2026-05-17,VM,March Order - 6 Degrees,2
+2026-05-24,VM,March Order - 6 Degrees,2
+2026-05-31,VM,March Order - 6 Degrees,2
+2026-06-07,VM,March Order - 6 Degrees,2
+2026-06-14,VM,June Order - 6 Degrees,3
+2026-06-21,VM,June Order - 6 Degrees,3
+2026-06-28,VM,June Order - 6 Degrees,3
+2026-07-05,VM,June Order - 6 Degrees,3
