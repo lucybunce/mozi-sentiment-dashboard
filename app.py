@@ -98,6 +98,10 @@ def load_okendo():
     df = pd.read_csv(path, parse_dates=['date'])
     df['sku'] = df['sku'].str.strip().str.upper()
     df['scent_name'] = df['scent_name'].fillna(df['sku'].map(SCENT_NAMES))
+    # Index by the actual Shopify order date when the review was matched to one
+    # (by email + SKU, closest in time) — falls back to review submission date otherwise.
+    df['order_date'] = pd.to_datetime(df.get('order_date'), errors='coerce')
+    df['effective_date'] = df['order_date'].fillna(df['date'])
     return df
 
 @st.cache_data(ttl=3600)
@@ -205,7 +209,7 @@ tab1, tab2 = st.tabs(["By Scent", "By Formula (PO Batch)"])
 with tab1:
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">By Scent</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Star ratings and attribute scores by scent, filterable by time period. NPS from Omniconvert.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Star ratings and attribute scores by scent, filterable by time period. Indexed by order date when the review matches a Shopify order (by SKU + closest date), otherwise review date. NPS from Omniconvert.</div>', unsafe_allow_html=True)
 
     # Time period filter
     period_opts = ['All Time','This Week','This Month','Last 30 Days','Last 90 Days','Custom Range']
@@ -236,7 +240,7 @@ with tab1:
             date_to = st.date_input("To", value=today, key='d_to')
 
     # Filter Okendo data
-    mask = (df_ok['date'].dt.date >= date_from) & (df_ok['date'].dt.date <= date_to)
+    mask = (df_ok['effective_date'].dt.date >= date_from) & (df_ok['effective_date'].dt.date <= date_to)
     df_f = df_ok[mask]
 
     # Build summary table
@@ -369,11 +373,11 @@ with tab1:
     # Charts
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">Rating Trends Over Time</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Weekly average star rating per scent. Toggle SKUs using the legend.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Weekly average star rating per scent, by order date when matched. Toggle SKUs using the legend.</div>', unsafe_allow_html=True)
 
     # Weekly aggregation
-    df_ok_filt = df_ok[(df_ok['date'].dt.date >= date_from) & (df_ok['date'].dt.date <= date_to)].copy()
-    df_ok_filt['week'] = df_ok_filt['date'].dt.to_period('W').apply(lambda p: p.start_time)
+    df_ok_filt = df_ok[(df_ok['effective_date'].dt.date >= date_from) & (df_ok['effective_date'].dt.date <= date_to)].copy()
+    df_ok_filt['week'] = df_ok_filt['effective_date'].dt.to_period('W').apply(lambda p: p.start_time)
     weekly = (df_ok_filt.groupby(['week','sku'])
               .agg(avg_rating=('rating','mean'), n=('rating','count'))
               .reset_index())
@@ -557,7 +561,7 @@ with tab2:
     # ══════════════════════════════════════════════════════════════════════
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">By PO Batch</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Star ratings and NPS by production batch. NPS from Omniconvert (current batch) and Survicate (historical).</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Star ratings (by order date) and NPS (by approximate order date) by production batch. NPS from Omniconvert (current batch) and Survicate (historical).</div>', unsafe_allow_html=True)
 
     po_rows = []
     for po_name in po_order:
@@ -567,8 +571,8 @@ with tab2:
             d_from_po, d_to_po = sku_po_map[sku][po_name]
             sub = df_ok[
                 (df_ok['sku'] == sku) &
-                (df_ok['date'].dt.date >= d_from_po) &
-                (df_ok['date'].dt.date <= d_to_po)
+                (df_ok['effective_date'].dt.date >= d_from_po) &
+                (df_ok['effective_date'].dt.date <= d_to_po)
             ]
             n_rev = len(sub)
             avg_r = round(sub['rating'].mean(), 2) if n_rev else None
@@ -604,7 +608,7 @@ with tab2:
     # ══════════════════════════════════════════════════════════════════════
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">By Shipment #</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Star ratings and NPS by individual shipment (a PO batch can span several shipments as it\'s restocked). Shipment 0 predates shipment-level tracking. NPS from Omniconvert only — shipment tracking has no historical Survicate data.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Star ratings (by order date) and NPS (by approximate order date) by individual shipment (a PO batch can span several shipments as it\'s restocked). Shipment 0 predates shipment-level tracking. NPS from Omniconvert only — shipment tracking has no historical Survicate data.</div>', unsafe_allow_html=True)
 
     ship_rows = []
     for sku in SCENT_ORDER:
@@ -614,8 +618,8 @@ with tab2:
             d_from_s, d_to_s = sku_ship_map[sku][ship_num]
             sub = df_ok[
                 (df_ok['sku'] == sku) &
-                (df_ok['date'].dt.date >= d_from_s) &
-                (df_ok['date'].dt.date <= d_to_s)
+                (df_ok['effective_date'].dt.date >= d_from_s) &
+                (df_ok['effective_date'].dt.date <= d_to_s)
             ]
             n_rev = len(sub)
             avg_r = round(sub['rating'].mean(), 2) if n_rev else None
@@ -653,25 +657,28 @@ with tab2:
     # ══════════════════════════════════════════════════════════════════════
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">Trend by Scent</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Weekly avg rating and NPS over time (by review/response date), since Jan 2026. PO batch and shipment # changes are marked at the bottom, next to the month labels.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-sub">Weekly avg rating and NPS by order date (rating: matched Shopify order when found, else review date; NPS: response date minus the survey\'s 10/40-day offset) since Jan 2026. PO batch and shipment # changes are marked at the bottom, next to the month labels.</div>', unsafe_allow_html=True)
 
     trend_sku_label = st.selectbox('Select scent', options=sku_options, index=0, key='trend_sku_select')
     trend_sku = sku_label_to_code[trend_sku_label]
 
     df_ok_sku = df_ok[df_ok['sku'] == trend_sku].copy()
-    df_ok_sku['week'] = df_ok_sku['date'].dt.to_period('W').apply(lambda p: p.start_time)
+    df_ok_sku['week'] = df_ok_sku['effective_date'].dt.to_period('W').apply(lambda p: p.start_time)
     weekly_rating = (df_ok_sku.groupby('week')
                      .agg(avg_rating=('rating','mean'), n=('rating','count'))
                      .reset_index())
     weekly_rating = weekly_rating[weekly_rating['n'] >= 2]
 
     def weekly_nps_for(sku, days):
+        """Bucket by approximate order date (response date minus the survey's offset), matching
+        the same approximation used for the PO Batch / Shipment # tables above, not response date."""
         if df_nps_all.empty:
             return pd.DataFrame(columns=['week','nps','n'])
         sub = df_nps_all[(df_nps_all['sku'] == sku) & (df_nps_all['survey_type_days'] == str(days))].copy()
         if sub.empty:
             return pd.DataFrame(columns=['week','nps','n'])
-        sub['week'] = sub['date'].dt.to_period('W').apply(lambda p: p.start_time)
+        sub['approx_order_date'] = sub['date'] - pd.Timedelta(days=days)
+        sub['week'] = sub['approx_order_date'].dt.to_period('W').apply(lambda p: p.start_time)
         rows = []
         for wk, grp in sub.groupby('week'):
             scores = grp['score'].dropna().astype(int).tolist()
@@ -701,18 +708,24 @@ with tab2:
             fig_trend.add_trace(go.Scatter(
                 x=weekly_rating['week'], y=weekly_rating['avg_rating'], name='Avg Rating',
                 mode='lines+markers', line=dict(color='#1C1C2E', width=2), marker=dict(size=5),
+                customdata=weekly_rating['n'],
+                hovertemplate='Avg Rating: %{y:.2f}★ (n=%{customdata})<extra></extra>',
             ), secondary_y=False)
 
         if not weekly_nps10.empty:
             fig_trend.add_trace(go.Scatter(
                 x=weekly_nps10['week'], y=weekly_nps10['nps'], name='NPS 10-Day',
                 mode='lines+markers', line=dict(color='#4F86C6', width=2, dash='dot'), marker=dict(size=5),
+                customdata=weekly_nps10['n'],
+                hovertemplate='NPS 10-Day: %{y:+.0f} (n=%{customdata})<extra></extra>',
             ), secondary_y=True)
 
         if not weekly_nps40.empty:
             fig_trend.add_trace(go.Scatter(
                 x=weekly_nps40['week'], y=weekly_nps40['nps'], name='NPS 40-Day',
                 mode='lines+markers', line=dict(color='#C8A96E', width=2, dash='dot'), marker=dict(size=5),
+                customdata=weekly_nps40['n'],
+                hovertemplate='NPS 40-Day: %{y:+.0f} (n=%{customdata})<extra></extra>',
             ), secondary_y=True)
 
         # PO batch + shipment changes — one small label at the bottom per date, next to
