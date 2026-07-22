@@ -2610,7 +2610,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-11-20,AW,1 Pack,5.0,,,,,2025-08-31
 2025-11-20,AW,Mozi Wash Signature Detergent,5.0,,,,,2025-11-09
 2025-11-20,GH,Golden Hour,5.0,,,,,2025-11-11
-2025-11-20,SD,Mozi Wash Laundry Detergent,5.0,,,,,2025-04-07
+2025-11-20,SD,Mozi Wash Laundry Detergent,5.0,,,,,
 2025-11-20,CC,Mozi Wash Signature Detergent,5.0,,,,,
 2025-11-20,CC,Central Coast,5.0,,,,,2025-10-19
 2025-11-19,SD,Sugar Dew,3.0,,,,,2025-10-18
@@ -2652,7 +2652,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-11-14,CZ,Signature Cozy,5.0,,,,,2025-12-24
 2025-11-14,DP,Desert Poppy,5.0,,,,,2025-10-17
 2025-11-14,SD,Mozi Wash Signature Detergent,5.0,,,,,2025-12-30
-2025-11-13,AW,Alpine Woods,5.0,,,,,2025-04-13
+2025-11-13,AW,Alpine Woods,5.0,,,,,
 2025-11-13,CC,1 Pack,5.0,,,,,2025-06-24
 2025-11-13,CC,Central Coast,5.0,,,,,2025-10-09
 2025-11-12,CC,1 Pack,2.0,,,,,2025-06-18
@@ -2680,12 +2680,12 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-11-08,VM,Vanilla Moon,1.0,,,,,2025-06-29
 2025-11-07,SD,Mozi Wash Signature Detergent,5.0,,,,,2025-11-02
 2025-11-07,SD,Sugar Dew,5.0,,,,,2025-11-22
-2025-11-06,SD,Sugar Dew,5.0,,,,,2025-05-01
+2025-11-06,SD,Sugar Dew,5.0,,,,,
 2025-11-06,SD,Mozi Wash Signature Detergent,5.0,,,,,2025-12-18
 2025-11-06,CC,Central Coast,2.0,,,,,2025-09-21
 2025-11-06,CC,Central Coast,3.0,,,,,2025-05-23
 2025-11-06,VM,Mozi Wash Signature Detergent,5.0,,,,,2025-08-06
-2025-11-06,SD,Mozi Wash Signature Detergent,5.0,,,,,2025-05-06
+2025-11-06,SD,Mozi Wash Signature Detergent,5.0,,,,,
 2025-11-06,CZ,Signature Cozy,5.0,,,,,2025-06-06
 2025-11-06,SD,Mozi Wash Laundry Detergent,5.0,,,,,2025-05-17
 2025-11-06,CC,Central Coast,5.0,,,,,2025-10-18
@@ -2693,14 +2693,14 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-11-06,AW,Alpine Woods,1.0,,,,,2025-11-06
 2025-11-06,SD,Sugar Dew,5.0,,,,,2025-07-25
 2025-11-06,CC,Mozi Wash Signature Detergent,5.0,,,,,
-2025-11-06,VM,Vanilla Moon,4.0,,,,,2025-05-07
-2025-11-06,DP,Desert Poppy,4.0,,,,,2025-05-07
+2025-11-06,VM,Vanilla Moon,4.0,,,,,
+2025-11-06,DP,Desert Poppy,4.0,,,,,
 2025-11-06,CZ,Mozi Wash Signature Detergent,3.0,,,,,2025-06-18
 2025-11-06,VM,Mozi Wash Signature Detergent,5.0,,,,,2025-05-16
 2025-11-05,HR,Hollywood Rouge,2.0,,,,,2025-10-23
 2025-11-05,CZ,Mozi Wash Signature Detergent,5.0,,,,,2025-12-23
 2025-11-05,CZ,Signature Cozy,5.0,,,,,2025-06-07
-2025-11-05,DP,Desert Poppy,5.0,,,,,2025-03-20
+2025-11-05,DP,Desert Poppy,5.0,,,,,
 2025-11-05,DP,Mozi Wash Signature Detergent,1.0,,,,,2025-12-25
 2025-11-05,SD,Mozi Wash Signature Detergent,2.0,,,,,2025-06-12
 2025-11-05,CC,Mozi Wash Signature Detergent,1.0,,,,,
@@ -2905,7 +2905,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-10-15,DP,Desert Poppy,3.0,,,,,2025-09-23
 2025-10-14,CC,Mozi Wash Signature Detergent,5.0,,,,,
 2025-10-14,DP,Mozi Wash Signature Detergent,2.0,,,,,2025-07-21
-2025-10-14,CC,Mozi Wash Signature Detergent,5.0,,,,,2026-05-10
+2025-10-14,CC,Mozi Wash Signature Detergent,5.0,,,,,
 2025-10-14,CC,Central Coast,5.0,,,,,2025-09-11
 2025-10-14,CZ,Signature Cozy,5.0,,,,,2025-09-04
 2025-10-14,CC,Central Coast,5.0,,,,,2025-09-04
@@ -3001,7 +3001,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-10-14,AW,Alpine Woods Laundry Essentials,5.0,,,,,2025-09-23
 2025-10-14,AW,Alpine Woods,5.0,,,,,2025-08-27
 2025-10-14,AW,Alpine Woods,5.0,,,,,2025-09-19
-2025-10-14,CZ,Signature Cozy Laundry Essentials,5.0,,,,,2026-06-26
+2025-10-14,CZ,Signature Cozy Laundry Essentials,5.0,,,,,
 2025-10-14,CZ,Mozi Wash Laundry Detergent,5.0,,,,,2025-12-04
 2025-10-14,AW,Mozi Wash Signature Detergent,5.0,,,,,
 2025-10-14,CC,Central Coast,5.0,,,,,2025-09-18
@@ -3121,7 +3121,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-06-27,CC,Mozi Wash Signature Detergent,5.0,,,,,
 2025-06-27,CC,Mozi Wash Signature Detergent,5.0,,,,,
 2025-06-26,CC,Mozi Wash Signature Detergent,4.0,,,,,2025-08-16
-2025-06-25,CC,Mozi Wash Signature Detergent,5.0,,,,,2026-01-11
+2025-06-25,CC,Mozi Wash Signature Detergent,5.0,,,,,
 2025-06-24,VM,Mozi Wash Signature Detergent,5.0,,,,,
 2025-06-21,CC,Mozi Wash Signature Detergent,5.0,,,,,2025-07-29
 2025-06-20,CC,Mozi Wash Signature Detergent,1.0,,,,,
@@ -3204,7 +3204,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-01-15,CZ,Signature Cozy,2.0,,,,,
 2025-01-12,CC,Central Coast,5.0,,,,,
 2025-01-02,CZ,Signature Cozy,4.0,,,,,2025-01-05
-2025-01-01,CZ,Signature Cozy,4.0,,,,,2025-08-17
+2025-01-01,CZ,Signature Cozy,4.0,,,,,
 2025-01-01,CZ,Signature Cozy,5.0,,,,,2025-01-28
 2025-01-01,VM,Vanilla Moon,5.0,,,,,
 2025-01-01,SD,Sugar Dew,3.0,,,,,2025-01-11
@@ -3213,7 +3213,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2025-01-01,VM,Vanilla Moon,1.0,,,,,
 2025-01-01,VM,Vanilla Moon,4.0,,,,,
 2025-01-01,CC,Central Coast,5.0,,,,,
-2025-01-01,CZ,Signature Cozy,2.0,,,,,2025-12-18
+2025-01-01,CZ,Signature Cozy,2.0,,,,,
 2025-01-01,SD,Sugar Dew,3.0,,,,,2025-01-30
 2025-01-01,CZ,Signature Cozy,5.0,,,,,2025-01-13
 2025-01-01,CZ,Signature Cozy,5.0,,,,,2025-01-12
@@ -3237,12 +3237,12 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-12-02,CZ,Signature Cozy,5.0,,,,,2025-01-15
 2024-12-01,SD,Sugar Dew,5.0,,,,,
 2024-12-01,SD,Sugar Dew,5.0,,,,,
-2024-11-27,CC,Central Coast,3.0,,,,,2025-08-29
+2024-11-27,CC,Central Coast,3.0,,,,,
 2024-11-24,CZ,Signature Cozy,1.0,,,,,
-2024-11-22,SD,Sugar Dew,5.0,,,,,2025-12-18
+2024-11-22,SD,Sugar Dew,5.0,,,,,
 2024-11-21,VM,Vanilla Moon,3.0,,,,,
 2024-11-19,CZ,Signature Cozy,5.0,,,,,2025-04-04
-2024-11-17,VM,Vanilla Moon,5.0,,,,,2025-07-29
+2024-11-17,VM,Vanilla Moon,5.0,,,,,
 2024-11-16,VM,Vanilla Moon,5.0,,,,,
 2024-11-15,VM,Vanilla Moon,5.0,,,,,
 2024-11-14,CC,Central Coast,5.0,,,,,
@@ -3252,13 +3252,13 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-11-10,CZ,Signature Cozy,2.0,,,,,
 2024-11-09,VM,Vanilla Moon,5.0,,,,,
 2024-11-09,SD,Sugar Dew,5.0,,,,,2025-01-26
-2024-11-09,CZ,Signature Cozy,5.0,,,,,2025-11-09
+2024-11-09,CZ,Signature Cozy,5.0,,,,,
 2024-11-06,SD,Sugar Dew,5.0,,,,,
 2024-11-05,CC,Central Coast,5.0,,,,,
 2024-11-04,CC,Central Coast,4.0,,,,,
 2024-11-04,CZ,Signature Cozy,4.0,,,,,
 2024-11-03,SD,Sugar Dew,5.0,,,,,
-2024-11-03,CZ,Signature Cozy,5.0,,,,,2025-08-31
+2024-11-03,CZ,Signature Cozy,5.0,,,,,
 2024-11-02,SD,Sugar Dew,4.0,,,,,
 2024-11-01,SD,Sugar Dew,5.0,,,,,2025-01-28
 2024-11-01,CZ,Signature Cozy,5.0,,,,,
@@ -3269,13 +3269,13 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-10-28,CC,Central Coast,5.0,,,,,
 2024-10-27,CZ,Signature Cozy,3.0,,,,,
 2024-10-26,CZ,Signature Cozy,4.0,,,,,
-2024-10-24,CC,Central Coast,5.0,,,,,2025-08-29
-2024-10-24,CZ,Signature Cozy,5.0,,,,,2026-01-16
+2024-10-24,CC,Central Coast,5.0,,,,,
+2024-10-24,CZ,Signature Cozy,5.0,,,,,
 2024-10-23,SD,Sugar Dew,3.0,,,,,
 2024-10-23,CZ,Signature Cozy,2.0,,,,,
-2024-10-22,CZ,Signature Cozy,5.0,,,,,2025-10-05
+2024-10-22,CZ,Signature Cozy,5.0,,,,,
 2024-10-22,CC,Central Coast,5.0,,,,,2025-01-01
-2024-10-17,CZ,Signature Cozy,5.0,,,,,2025-12-18
+2024-10-17,CZ,Signature Cozy,5.0,,,,,
 2024-10-14,CZ,Signature Cozy,5.0,,,,,
 2024-10-13,CZ,Signature Cozy,5.0,,,,,
 2024-10-11,CZ,Signature Cozy,5.0,,,,,2025-04-06
@@ -3290,32 +3290,32 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-09-28,CZ,Signature Cozy,5.0,,,,,
 2024-09-26,CC,Central Coast,3.0,,,,,
 2024-09-26,CZ,Signature Cozy,5.0,,,,,
-2024-09-24,CZ,Signature Cozy,5.0,,,,,2025-04-14
-2024-09-24,CZ,Signature Cozy,5.0,,,,,2025-06-14
+2024-09-24,CZ,Signature Cozy,5.0,,,,,
+2024-09-24,CZ,Signature Cozy,5.0,,,,,
 2024-09-23,CC,Central Coast,5.0,,,,,2025-02-22
-2024-09-23,CZ,Signature Cozy,5.0,,,,,2025-11-21
+2024-09-23,CZ,Signature Cozy,5.0,,,,,
 2024-09-20,CC,Central Coast,5.0,,,,,
-2024-09-18,CC,Central Coast,5.0,,,,,2025-06-02
+2024-09-18,CC,Central Coast,5.0,,,,,
 2024-09-18,CZ,Signature Cozy,4.0,,,,,
-2024-09-18,CC,Central Coast,5.0,,,,,2025-09-15
-2024-09-18,CZ,Signature Cozy,5.0,,,,,2025-08-02
+2024-09-18,CC,Central Coast,5.0,,,,,
+2024-09-18,CZ,Signature Cozy,5.0,,,,,
 2024-09-12,CZ,Signature Cozy,5.0,,,,,
 2024-09-11,CC,Central Coast,5.0,,,,,2025-02-10
 2024-09-09,CZ,Signature Cozy,1.0,,,,,
 2024-09-06,SD,Sugar Dew,5.0,,,,,
-2024-09-06,CZ,Signature Cozy,5.0,,,,,2025-12-18
+2024-09-06,CZ,Signature Cozy,5.0,,,,,
 2024-09-03,SD,Sugar Dew,5.0,,,,,
 2024-09-03,CC,Central Coast,5.0,,,,,
 2024-09-02,CC,Central Coast,5.0,,,,,
-2024-09-01,CC,Central Coast,5.0,,,,,2025-03-27
+2024-09-01,CC,Central Coast,5.0,,,,,
 2024-08-31,SD,Sugar Dew,5.0,,,,,
 2024-08-31,CZ,Signature Cozy,5.0,,,,,
 2024-08-30,CC,Central Coast,4.0,,,,,
 2024-08-30,SD,Sugar Dew,5.0,,,,,
 2024-08-30,CC,Central Coast,2.0,,,,,2025-02-02
 2024-08-30,CC,Central Coast,2.0,,,,,2025-02-02
-2024-08-28,CC,Central Coast,4.0,,,,,2025-11-02
-2024-08-26,CZ,Signature Cozy,5.0,,,,,2025-04-07
+2024-08-28,CC,Central Coast,4.0,,,,,
+2024-08-26,CZ,Signature Cozy,5.0,,,,,
 2024-08-25,CC,Central Coast,5.0,,,,,2025-02-01
 2024-08-24,CZ,Signature Cozy,5.0,,,,,
 2024-08-24,CC,Central Coast,5.0,,,,,
@@ -3331,9 +3331,9 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-08-16,CC,Central Coast,5.0,,,,,
 2024-08-15,CZ,Signature Cozy,5.0,,,,,
 2024-08-15,CZ,Signature Cozy,2.0,,,,,
-2024-08-14,CZ,Signature Cozy,5.0,,,,,2025-04-11
-2024-08-14,CC,Central Coast,5.0,,,,,2025-06-26
-2024-08-13,CC,Central Coast,5.0,,,,,2025-03-08
+2024-08-14,CZ,Signature Cozy,5.0,,,,,
+2024-08-14,CC,Central Coast,5.0,,,,,
+2024-08-13,CC,Central Coast,5.0,,,,,
 2024-08-13,CC,Central Coast,5.0,,,,,2025-01-12
 2024-08-13,CZ,Signature Cozy,5.0,,,,,2025-01-12
 2024-08-13,CC,Central Coast,5.0,,,,,
@@ -3342,49 +3342,49 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-08-09,SD,Sugar Dew,5.0,,,,,
 2024-08-08,CZ,Signature Cozy,5.0,,,,,
 2024-08-08,CZ,Signature Cozy,5.0,,,,,
-2024-08-08,CZ,Signature Cozy,5.0,,,,,2025-02-17
+2024-08-08,CZ,Signature Cozy,5.0,,,,,
 2024-08-07,CZ,Signature Cozy,5.0,,,,,
 2024-08-07,CC,Central Coast,5.0,,,,,
 2024-08-07,CZ,Signature Cozy,5.0,,,,,
 2024-08-07,CC,Central Coast,5.0,,,,,
 2024-08-06,SD,Sugar Dew,1.0,,,,,
 2024-08-06,CC,Central Coast,3.0,,,,,
-2024-08-06,CZ,Signature Cozy,5.0,,,,,2025-05-06
+2024-08-06,CZ,Signature Cozy,5.0,,,,,
 2024-08-06,CC,Central Coast,2.0,,,,,
-2024-08-05,CZ,Signature Cozy,5.0,,,,,2025-05-07
+2024-08-05,CZ,Signature Cozy,5.0,,,,,
 2024-08-05,SD,Sugar Dew,5.0,,,,,
 2024-08-04,CC,Central Coast,5.0,,,,,
 2024-08-04,CZ,Signature Cozy,5.0,,,,,
 2024-08-03,SD,Sugar Dew,2.0,,,,,
 2024-08-02,CZ,Signature Cozy,5.0,,,,,
 2024-08-01,CZ,Signature Cozy,5.0,,,,,
-2024-08-01,CC,Central Coast,5.0,,,,,2025-01-31
+2024-08-01,CC,Central Coast,5.0,,,,,
 2024-07-31,CZ,Signature Cozy,3.0,,,,,
 2024-07-31,SD,Sugar Dew,5.0,,,,,2025-01-03
 2024-07-30,CZ,Signature Cozy,5.0,,,,,
 2024-07-29,CC,Central Coast,5.0,,,,,
 2024-07-29,CC,Central Coast,5.0,,,,,
-2024-07-28,CC,Central Coast,5.0,,,,,2026-02-19
-2024-07-28,SD,Sugar Dew,5.0,,,,,2025-03-23
+2024-07-28,CC,Central Coast,5.0,,,,,
+2024-07-28,SD,Sugar Dew,5.0,,,,,
 2024-07-25,CZ,Signature Cozy,5.0,,,,,
 2024-07-24,CZ,Signature Cozy,5.0,,,,,2025-01-01
 2024-07-24,SD,Sugar Dew,5.0,,,,,2025-01-01
-2024-07-20,CZ,Signature Cozy,5.0,,,,,2025-05-27
+2024-07-20,CZ,Signature Cozy,5.0,,,,,
 2024-07-19,CZ,Signature Cozy,3.0,,,,,
 2024-07-18,CC,Central Coast,5.0,,,,,
-2024-07-17,CC,Central Coast,5.0,,,,,2025-02-21
-2024-07-17,CZ,Signature Cozy,5.0,,,,,2025-06-25
+2024-07-17,CC,Central Coast,5.0,,,,,
+2024-07-17,CZ,Signature Cozy,5.0,,,,,
 2024-07-16,CC,Central Coast,5.0,,,,,
 2024-07-16,CZ,Signature Cozy,4.0,,,,,
 2024-07-14,SD,Sugar Dew,5.0,,,,,
-2024-07-13,CZ,Signature Cozy,5.0,,,,,2025-01-13
+2024-07-13,CZ,Signature Cozy,5.0,,,,,
 2024-07-11,CC,Central Coast,5.0,,,,,
 2024-07-11,CC,Central Coast,1.0,,,,,
 2024-07-11,CC,Central Coast,1.0,,,,,
 2024-07-10,CZ,Signature Cozy,4.0,,,,,
 2024-07-10,SD,Sugar Dew,2.0,,,,,
 2024-07-09,CC,Central Coast,2.0,,,,,
-2024-07-09,CZ,Signature Cozy,5.0,,,,,2025-01-25
+2024-07-09,CZ,Signature Cozy,5.0,,,,,
 2024-07-08,SD,Sugar Dew,2.0,,,,,
 2024-07-08,CZ,Signature Cozy,4.0,,,,,
 2024-07-08,SD,Sugar Dew,4.0,,,,,
@@ -3398,9 +3398,9 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-07-04,CZ,Signature Cozy,5.0,,,,,
 2024-07-04,CC,Central Coast,4.0,,,,,
 2024-07-03,CC,Central Coast,5.0,,,,,
-2024-07-03,CZ,Signature Cozy,5.0,,,,,2025-12-18
+2024-07-03,CZ,Signature Cozy,5.0,,,,,
 2024-07-03,CC,Central Coast,5.0,,,,,
-2024-07-02,SD,Sugar Dew,5.0,,,,,2025-02-08
+2024-07-02,SD,Sugar Dew,5.0,,,,,
 2024-07-02,CC,Central Coast,5.0,,,,,
 2024-07-02,CC,Central Coast,4.0,,,,,
 2024-07-02,CZ,Signature Cozy,5.0,,,,,
@@ -3408,53 +3408,53 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-07-02,CC,Central Coast,5.0,,,,,
 2024-07-02,CC,Central Coast,3.0,,,,,
 2024-07-02,SD,Sugar Dew,5.0,,,,,
-2024-07-01,CC,Central Coast,5.0,,,,,2025-04-16
 2024-07-01,CC,Central Coast,5.0,,,,,
-2024-07-01,CZ,Signature Cozy,2.0,,,,,2026-03-02
-2024-07-01,CC,Central Coast,5.0,,,,,2025-01-12
+2024-07-01,CC,Central Coast,5.0,,,,,
+2024-07-01,CZ,Signature Cozy,2.0,,,,,
+2024-07-01,CC,Central Coast,5.0,,,,,
 2024-07-01,CZ,Signature Cozy,2.0,,,,,
 2024-07-01,CZ,Signature Cozy,4.0,,,,,
-2024-07-01,SD,Sugar Dew,5.0,,,,,2025-02-16
-2024-07-01,CZ,Signature Cozy,5.0,,,,,2026-05-07
+2024-07-01,SD,Sugar Dew,5.0,,,,,
+2024-07-01,CZ,Signature Cozy,5.0,,,,,
 2024-07-01,CZ,Signature Cozy,1.0,,,,,
 2024-07-01,SD,Sugar Dew,5.0,,,,,
 2024-07-01,CC,Central Coast,2.0,,,,,
-2024-07-01,CC,Central Coast,5.0,,,,,2025-04-12
-2024-07-01,CZ,Signature Cozy,5.0,,,,,2025-08-16
-2024-07-01,CZ,Signature Cozy,5.0,,,,,2025-10-15
-2024-07-01,CC,Central Coast,5.0,,,,,2026-02-24
+2024-07-01,CC,Central Coast,5.0,,,,,
+2024-07-01,CZ,Signature Cozy,5.0,,,,,
+2024-07-01,CZ,Signature Cozy,5.0,,,,,
+2024-07-01,CC,Central Coast,5.0,,,,,
 2024-07-01,CC,Central Coast,3.0,,,,,
-2024-07-01,CC,Central Coast,4.0,,,,,2025-11-28
-2024-07-01,CC,Central Coast,4.0,,,,,2025-02-05
-2024-07-01,SD,Sugar Dew,5.0,,,,,
-2024-07-01,CZ,Signature Cozy,5.0,,,,,2025-01-06
-2024-07-01,CC,Central Coast,2.0,,,,,
-2024-07-01,CZ,Signature Cozy,5.0,,,,,2025-07-01
 2024-07-01,CC,Central Coast,4.0,,,,,
-2024-07-01,CC,Central Coast,5.0,,,,,2025-01-11
-2024-07-01,CZ,Signature Cozy,5.0,,,,,2025-01-11
+2024-07-01,CC,Central Coast,4.0,,,,,
+2024-07-01,SD,Sugar Dew,5.0,,,,,
 2024-07-01,CZ,Signature Cozy,5.0,,,,,
 2024-07-01,CC,Central Coast,2.0,,,,,
-2024-07-01,CC,Central Coast,5.0,,,,,2025-01-20
-2024-07-01,SD,Sugar Dew,5.0,,,,,2025-01-26
+2024-07-01,CZ,Signature Cozy,5.0,,,,,
+2024-07-01,CC,Central Coast,4.0,,,,,
+2024-07-01,CC,Central Coast,5.0,,,,,
+2024-07-01,CZ,Signature Cozy,5.0,,,,,
+2024-07-01,CZ,Signature Cozy,5.0,,,,,
+2024-07-01,CC,Central Coast,2.0,,,,,
+2024-07-01,CC,Central Coast,5.0,,,,,
+2024-07-01,SD,Sugar Dew,5.0,,,,,
 2024-07-01,CZ,Signature Cozy,1.0,,,,,
-2024-07-01,CZ,Signature Cozy,5.0,,,,,2025-05-02
+2024-07-01,CZ,Signature Cozy,5.0,,,,,
 2024-07-01,SD,Sugar Dew,5.0,,,,,
 2024-07-01,CC,Central Coast,4.0,,,,,
 2024-07-01,CZ,Signature Cozy,1.0,,,,,
-2024-07-01,CC,Central Coast,5.0,,,,,2025-02-20
+2024-07-01,CC,Central Coast,5.0,,,,,
 2024-07-01,SD,Sugar Dew,4.0,,,,,
 2024-07-01,CC,Central Coast,5.0,,,,,
-2024-07-01,SD,Sugar Dew,4.0,,,,,2025-12-18
+2024-07-01,SD,Sugar Dew,4.0,,,,,
 2024-07-01,CC,Central Coast,5.0,,,,,
 2024-07-01,CC,Central Coast,5.0,,,,,
 2024-07-01,CZ,Signature Cozy,3.0,,,,,
 2024-07-01,CZ,Signature Cozy,1.0,,,,,
-2024-07-01,CC,Central Coast,5.0,,,,,2025-08-24
+2024-07-01,CC,Central Coast,5.0,,,,,
 2024-07-01,CZ,Signature Cozy,5.0,,,,,
 2024-07-01,SD,Sugar Dew,5.0,,,,,
-2024-07-01,CC,Central Coast,5.0,,,,,2025-12-18
-2024-07-01,CC,Central Coast,5.0,,,,,2025-01-22
+2024-07-01,CC,Central Coast,5.0,,,,,
+2024-07-01,CC,Central Coast,5.0,,,,,
 2024-07-01,CZ,Signature Cozy,5.0,,,,,
 2024-07-01,SD,Sugar Dew,3.0,,,,,
 2024-06-30,CC,Central Coast,5.0,,,,,
@@ -3466,21 +3466,21 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-06-14,CC,Central Coast,5.0,,,,,
 2024-06-13,SD,Sugar Dew,5.0,,,,,
 2024-06-09,CC,Central Coast,5.0,,,,,
-2024-06-08,CC,Central Coast,5.0,,,,,2025-02-08
-2024-06-08,SD,Sugar Dew,5.0,,,,,2025-04-27
+2024-06-08,CC,Central Coast,5.0,,,,,
+2024-06-08,SD,Sugar Dew,5.0,,,,,
 2024-06-05,SD,Sugar Dew,5.0,,,,,
-2024-06-05,CC,Central Coast,5.0,,,,,2025-07-30
-2024-06-05,SD,Sugar Dew,5.0,,,,,2025-02-05
+2024-06-05,CC,Central Coast,5.0,,,,,
+2024-06-05,SD,Sugar Dew,5.0,,,,,
 2024-06-02,CZ,Signature Cozy,5.0,,,,,
 2024-06-01,CC,Central Coast,5.0,,,,,
-2024-06-01,CC,Central Coast,5.0,,,,,2026-02-24
+2024-06-01,CC,Central Coast,5.0,,,,,
 2024-05-26,CZ,Signature Cozy,5.0,,,,,
-2024-05-23,CZ,Signature Cozy,5.0,,,,,2025-09-21
+2024-05-23,CZ,Signature Cozy,5.0,,,,,
 2024-05-21,CZ,Signature Cozy,5.0,,,,,
-2024-05-20,CC,Central Coast,5.0,,,,,2025-12-18
+2024-05-20,CC,Central Coast,5.0,,,,,
 2024-05-17,CC,Central Coast,1.0,,,,,
 2024-05-16,CC,Central Coast,5.0,,,,,
-2024-05-16,CZ,Signature Cozy,5.0,,,,,2025-12-19
+2024-05-16,CZ,Signature Cozy,5.0,,,,,
 2024-05-13,CC,Central Coast,5.0,,,,,
 2024-05-12,SD,Sugar Dew,5.0,,,,,
 2024-05-12,CC,Central Coast,5.0,,,,,
@@ -3505,9 +3505,9 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-03-28,SD,Sugar Dew,5.0,,,,,
 2024-03-24,CZ,Signature Cozy,5.0,,,,,
 2024-03-23,CC,Central Coast,5.0,,,,,
-2024-03-23,CZ,Signature Cozy,5.0,,,,,2025-08-02
+2024-03-23,CZ,Signature Cozy,5.0,,,,,
 2024-03-23,SD,Sugar Dew,3.0,,,,,
-2024-03-22,CZ,Signature Cozy,5.0,,,,,2025-12-18
+2024-03-22,CZ,Signature Cozy,5.0,,,,,
 2024-03-22,CZ,Signature Cozy,4.0,,,,,
 2024-03-22,CC,Central Coast,5.0,,,,,
 2024-03-11,CC,Central Coast,4.0,,,,,
@@ -3526,24 +3526,24 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-01-27,CC,Central Coast,5.0,,,,,
 2024-01-24,CC,Central Coast,5.0,,,,,
 2024-01-14,CZ,Signature Cozy,5.0,,,,,
-2024-01-12,CZ,Signature Cozy,1.0,,,,,2025-12-18
+2024-01-12,CZ,Signature Cozy,1.0,,,,,
 2024-01-12,CC,Central Coast,5.0,,,,,
 2024-01-11,CC,Central Coast,1.0,,,,,
-2024-01-10,SD,Sugar Dew,5.0,,,,,2025-12-01
+2024-01-10,SD,Sugar Dew,5.0,,,,,
 2024-01-09,CZ,Signature Cozy,3.0,,,,,
 2024-01-09,CC,Central Coast,3.0,,,,,
 2024-01-09,SD,Sugar Dew,3.0,,,,,
 2024-01-08,CZ,Signature Cozy,2.0,,,,,
 2024-01-08,CC,Central Coast,5.0,,,,,
 2024-01-08,CC,Central Coast,5.0,,,,,
-2024-01-08,CZ,Signature Cozy,5.0,,,,,2025-05-26
+2024-01-08,CZ,Signature Cozy,5.0,,,,,
 2024-01-08,CC,Central Coast,5.0,,,,,
 2024-01-08,CZ,Signature Cozy,1.0,,,,,
-2024-01-08,CZ,Signature Cozy,5.0,,,,,2025-12-18
-2024-01-08,CC,Central Coast,5.0,,,,,2025-12-18
+2024-01-08,CZ,Signature Cozy,5.0,,,,,
+2024-01-08,CC,Central Coast,5.0,,,,,
 2024-01-08,CZ,Signature Cozy,5.0,,,,,
 2024-01-08,SD,Sugar Dew,1.0,,,,,
-2024-01-08,CZ,Signature Cozy,5.0,,,,,2025-01-01
+2024-01-08,CZ,Signature Cozy,5.0,,,,,
 2024-01-08,CC,Central Coast,5.0,,,,,
 2024-01-08,SD,Sugar Dew,5.0,,,,,
 2024-01-08,SD,Sugar Dew,5.0,,,,,
@@ -3558,13 +3558,13 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2024-01-08,CC,Central Coast,1.0,,,,,
 2024-01-08,CC,Central Coast,1.0,,,,,
 2024-01-08,CC,Central Coast,5.0,,,,,
-2024-01-08,CZ,Signature Cozy,5.0,,,,,2025-12-18
+2024-01-08,CZ,Signature Cozy,5.0,,,,,
 2024-01-08,CZ,Signature Cozy,5.0,,,,,
 2024-01-08,SD,Sugar Dew,4.0,,,,,
-2024-01-08,CZ,Signature Cozy,5.0,,,,,2025-12-18
-2024-01-08,CZ,Signature Cozy,5.0,,,,,2025-11-29
 2024-01-08,CZ,Signature Cozy,5.0,,,,,
-2024-01-08,CZ,Signature Cozy,2.0,,,,,2026-05-12
+2024-01-08,CZ,Signature Cozy,5.0,,,,,
+2024-01-08,CZ,Signature Cozy,5.0,,,,,
+2024-01-08,CZ,Signature Cozy,2.0,,,,,
 2024-01-08,CZ,Signature Cozy,5.0,,,,,
 2024-01-08,SD,Sugar Dew,5.0,,,,,
 2024-01-07,CZ,Signature Cozy,5.0,,,,,
@@ -3576,17 +3576,17 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2023-12-12,CZ,Signature Cozy,1.0,,,,,
 2023-12-10,CC,Central Coast,5.0,,,,,
 2023-12-05,CZ,Signature Cozy,2.0,,,,,
-2023-12-03,CZ,Signature Cozy,5.0,,,,,2025-12-18
+2023-12-03,CZ,Signature Cozy,5.0,,,,,
 2023-12-03,SD,Sugar Dew,4.0,,,,,
-2023-12-02,CZ,Signature Cozy,5.0,,,,,2025-12-18
+2023-12-02,CZ,Signature Cozy,5.0,,,,,
 2023-11-22,CZ,Signature Cozy,1.0,,,,,
-2023-11-22,SD,Sugar Dew,1.0,,,,,2025-12-18
+2023-11-22,SD,Sugar Dew,1.0,,,,,
 2023-11-05,CC,Central Coast,5.0,,,,,
 2023-11-02,SD,Sugar Dew,5.0,,,,,
 2023-11-01,CZ,Signature Cozy,5.0,,,,,
 2023-10-16,CZ,Signature Cozy,2.0,,,,,
 2023-10-13,CZ,Signature Cozy,2.0,,,,,
-2023-10-07,CZ,Signature Cozy,1.0,,,,,2025-05-23
+2023-10-07,CZ,Signature Cozy,1.0,,,,,
 2023-10-04,SD,Sugar Dew,5.0,,,,,
 2023-10-04,SD,Sugar Dew,5.0,,,,,
 2023-10-04,SD,Sugar Dew,5.0,,,,,
@@ -3681,7 +3681,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2023-03-29,CC,Central Coast,5.0,,,,,
 2023-03-29,CC,Central Coast,5.0,,,,,
 2023-03-28,CC,Central Coast,5.0,,,,,
-2023-03-26,CZ,Signature Cozy,5.0,,,,,2025-02-13
+2023-03-26,CZ,Signature Cozy,5.0,,,,,
 2023-03-22,CZ,Signature Cozy,5.0,,,,,
 2023-03-11,CZ,Signature Cozy,5.0,,,,,
 2023-02-16,SD,Sugar Dew,5.0,,,,,
