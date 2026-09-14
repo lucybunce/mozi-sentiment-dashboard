@@ -1,7 +1,135 @@
 date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pouring,order_date
+2026-09-14,SK,9 Pack Sample Kit,2.0,,,,,
+2026-09-14,SK,9 Pack Sample Kit (for sampling),5.0,,,,,
+2026-09-14,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-14,MM,Malibu Mornings,5.0,0.0,5.0,5.0,2.0,2026-08-28
+2026-09-14,SK,9 Pack Sample Kit,2.0,,,,,
+2026-09-14,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-14,CZ,1 Pack,5.0,,,,,2026-08-15
+2026-09-14,CC,Central Coast,5.0,0.0,4.0,3.0,3.0,2026-08-27
+2026-09-14,GH,Golden Hour,4.0,0.0,4.0,3.0,3.0,2026-08-27
+2026-09-13,CC,Central Coast,5.0,0.0,5.0,5.0,5.0,2026-08-13
+2026-09-13,SK,9 Pack Sample Kit (for sampling),5.0,,,,,
+2026-09-13,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,5.0,2026-08-23
+2026-09-13,SK,9 Pack Sample Kit,4.0,,,,,
+2026-09-13,VM,Vanilla Moon,5.0,0.0,5.0,4.0,5.0,2026-08-01
+2026-09-13,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-13,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-13,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0,2026-08-29
+2026-09-13,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-13,CC,Central Coast,5.0,0.0,5.0,5.0,5.0,2026-08-20
+2026-09-13,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-13,SK,9 Pack Sample Kit,3.0,,,,,
+2026-09-13,SK,9 Pack Sample Kit,2.0,,,,,
+2026-09-13,AW,Alpine Woods,5.0,0.0,5.0,5.0,4.0,2026-09-03
+2026-09-13,GH,Golden Hour,5.0,0.0,5.0,5.0,4.0,2026-09-13
+2026-09-13,MM,Malibu Mornings,5.0,0.0,5.0,5.0,5.0,2026-08-27
+2026-09-13,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0,2026-08-01
+2026-09-13,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-12,GH,Golden Hour,5.0,-0.5,5.0,3.0,4.0,2026-08-19
+2026-09-12,GH,Golden Hour,5.0,0.0,5.0,5.0,5.0,2026-08-11
+2026-09-12,FC,Free and Clear,5.0,0.0,5.0,5.0,5.0,2026-08-11
+2026-09-12,SK,9 Pack Sample Kit,1.0,,,,,
+2026-09-12,CZ,Signature Cozy,3.0,1.0,5.0,5.0,5.0,2026-08-31
+2026-09-12,SK,9 Pack Sample Kit,3.0,,,,,
+2026-09-12,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0,2026-08-15
+2026-09-12,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-12,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0,2026-08-31
+2026-09-12,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0,2026-08-31
+2026-09-12,SD,Sugar Dew,5.0,0.0,5.0,5.0,4.0,2026-08-14
+2026-09-12,AW,Alpine Woods,5.0,0.0,5.0,5.0,4.0,2026-08-14
+2026-09-12,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-12,GH,Golden Hour,5.0,-1.0,4.0,4.0,5.0,2026-08-03
+2026-09-12,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0,2026-09-03
+2026-09-12,AW,Alpine Woods,5.0,0.0,5.0,5.0,4.0,2026-08-09
+2026-09-12,CZ,Signature Cozy,1.0,-1.0,4.0,4.0,3.0,2026-08-27
+2026-09-12,VM,Vanilla Moon,4.0,-1.0,3.0,5.0,5.0,2026-08-07
+2026-09-12,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-11,DP,Desert Poppy,1.0,0.0,3.0,1.0,1.0,2026-08-06
+2026-09-11,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0,2026-08-19
+2026-09-11,AW,Alpine Woods,5.0,0.0,5.0,5.0,3.0,2026-09-02
+2026-09-11,MM,Malibu Mornings,5.0,0.0,3.0,3.0,5.0,2026-07-30
+2026-09-11,CZ,Signature Cozy,4.0,0.0,4.0,4.0,1.0,2026-08-14
+2026-09-11,HR,Hollywood Rouge,5.0,-0.5,5.0,5.0,5.0,2026-08-16
+2026-09-11,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-11,CC,Central Coast,5.0,0.0,5.0,5.0,4.0,2026-08-26
+2026-09-11,SK,9 Pack Sample Kit,3.0,,,,,
+2026-09-11,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-11,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-11,CZ,Signature Cozy,5.0,0.0,5.0,3.0,3.0,2026-08-01
+2026-09-11,VM,Vanilla Moon,5.0,0.0,5.0,4.0,3.0,2026-08-06
+2026-09-11,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-11,SK,9 Pack Sample Kit,3.0,,,,,
+2026-09-11,GH,Golden Hour,1.0,0.5,1.0,3.0,2.0,2026-09-02
+2026-09-10,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-10,CZ,Signature Cozy,3.0,0.0,2.0,4.0,3.0,2026-08-03
+2026-09-10,CZ,Signature Cozy,1.0,-1.0,1.0,1.0,1.0,2026-08-12
+2026-09-10,SK,9 Pack Sample Kit,4.0,,,,,
+2026-09-10,CC,Central Coast,5.0,0.0,5.0,5.0,5.0,2026-08-28
+2026-09-10,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-10,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-10,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-10,CZ,Signature Cozy,3.0,0.0,2.0,3.0,3.0,2026-08-25
+2026-09-10,MM,Malibu Mornings,3.0,-1.0,5.0,3.0,3.0,2026-08-25
+2026-09-10,AW,Alpine Woods,5.0,0.0,5.0,5.0,5.0,2026-09-10
+2026-09-10,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0,2026-09-02
+2026-09-10,VM,Vanilla Moon,5.0,0.0,5.0,5.0,3.0,2026-09-02
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,SK,9 Pack Sample Kit,2.0,,,,,
+2026-09-09,CZ,Signature Cozy,5.0,0.0,5.0,5.0,3.0,2026-08-23
+2026-09-09,CZ,Signature Cozy,4.0,0.0,4.0,4.0,4.0,2026-08-12
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,GH,Golden Hour,3.0,-0.5,2.0,4.0,4.0,2026-08-12
+2026-09-09,SD,Sugar Dew,5.0,0.0,5.0,5.0,4.0,2026-08-12
+2026-09-09,CC,Central Coast,5.0,0.0,5.0,5.0,5.0,2026-08-05
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,CC,1 Pack,5.0,,,,,2026-07-24
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,DP,Desert Poppy,1.0,1.0,2.0,4.0,3.0,2026-08-24
+2026-09-09,DP,Desert Poppy,1.0,-1.0,1.0,1.0,1.0,2026-08-04
+2026-09-09,CZ,Signature Cozy,1.0,-1.0,1.0,1.0,1.0,2026-08-04
+2026-09-09,SD,Sugar Dew,1.0,-1.0,1.0,1.0,1.0,2026-08-04
+2026-09-09,CC,Central Coast,1.0,-1.0,1.0,1.0,1.0,2026-08-04
+2026-09-09,GH,Golden Hour,1.0,-1.0,1.0,1.0,1.0,2026-08-04
+2026-09-09,VM,Vanilla Moon,1.0,-1.0,1.0,1.0,1.0,2026-08-04
+2026-09-09,AW,Alpine Woods,1.0,-1.0,1.0,1.0,1.0,2026-08-04
+2026-09-09,FC,Free and Clear,1.0,-1.0,1.0,1.0,1.0,2026-08-04
+2026-09-09,SK,9 Pack Sample Kit,3.0,,,,,
+2026-09-09,DP,Desert Poppy,5.0,0.0,5.0,5.0,4.0,2026-07-29
+2026-09-09,SK,9 Pack Sample Kit,1.0,,,,,
+2026-09-09,CZ,Signature Cozy,5.0,0.0,3.0,3.0,3.0,2026-08-31
+2026-09-09,CC,Central Coast,5.0,0.0,3.0,3.0,3.0,2026-08-31
+2026-09-09,FC,Free and Clear,5.0,0.0,3.0,3.0,3.0,2026-08-31
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,CZ,Signature Cozy,5.0,0.0,5.0,5.0,4.0,2026-07-28
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,SD,Sugar Dew,5.0,0.5,5.0,5.0,4.0,2026-08-30
+2026-09-09,AW,Alpine Woods,5.0,0.5,5.0,5.0,4.0,2026-08-30
+2026-09-09,CC,Central Coast,5.0,0.5,5.0,5.0,4.0,2026-08-30
+2026-09-09,DP,Desert Poppy,3.0,-1.0,2.0,5.0,4.0,2026-08-30
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,DP,Desert Poppy,5.0,0.0,5.0,5.0,5.0,2026-08-17
+2026-09-09,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-09,CZ,Signature Cozy,4.0,1.0,3.0,5.0,5.0,2026-08-22
+2026-09-08,SK,9 Pack Sample Kit,1.0,,,,,
+2026-09-08,SK,9 Pack Sample Kit,3.0,,,,,
+2026-09-08,SK,9 Pack Sample Kit,2.0,,,,,
+2026-09-08,CZ,Signature Cozy,5.0,0.0,5.0,5.0,4.0,2026-08-11
+2026-09-08,VM,Vanilla Moon,5.0,0.0,5.0,5.0,4.0,2026-08-11
 2026-09-08,SK,9 Pack Sample Kit,5.0,,,,,
 2026-09-08,SK,9 Pack Sample Kit,5.0,,,,,
-2026-09-08,VM,Vanilla Moon,5.0,0.0,5.0,4.0,5.0,2026-08-02
+2026-09-08,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-08,MM,Malibu Mornings,5.0,0.0,5.0,5.0,5.0,2026-08-30
+2026-09-08,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0,2026-08-30
+2026-09-08,VM,Vanilla Moon,5.0,0.0,5.0,5.0,4.0,2026-08-30
+2026-09-08,CZ,Signature Cozy,5.0,0.0,5.0,5.0,4.0,2026-08-15
+2026-09-08,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,5.0,
+2026-09-08,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-08,SK,9 Pack Sample Kit,5.0,,,,,
+2026-09-08,VM,Vanilla Moon,5.0,0.0,5.0,4.0,5.0,2026-09-13
 2026-09-08,SK,9 Pack Sample Kit,1.0,,,,,
 2026-09-08,SK,9 Pack Sample Kit,5.0,,,,,
 2026-09-07,FC,Free and Clear,3.0,0.0,3.0,4.0,3.0,2026-07-17
@@ -35,11 +163,11 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-09-06,SK,9 Pack Sample Kit,5.0,,,,,
 2026-09-06,CZ,1 Pack,5.0,,,,,2026-09-07
 2026-09-06,SK,9 Pack Sample Kit,1.0,,,,,
-2026-09-06,CZ,Signature Cozy,5.0,0.0,4.0,3.0,2.0,2026-06-10
-2026-09-06,CC,Central Coast,5.0,-0.5,4.0,3.0,2.0,2026-06-10
+2026-09-06,CZ,Signature Cozy,5.0,0.0,4.0,3.0,2.0,2026-09-10
+2026-09-06,CC,Central Coast,5.0,-0.5,4.0,3.0,2.0,2026-09-10
 2026-09-05,CC,Central Coast,5.0,0.0,4.0,5.0,5.0,2026-08-16
 2026-09-05,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0,2026-08-16
-2026-09-05,AW,Alpine Woods,5.0,0.0,5.0,4.0,3.0,2026-07-31
+2026-09-05,AW,Alpine Woods,5.0,0.0,5.0,4.0,3.0,2026-09-08
 2026-09-05,SK,9 Pack Sample Kit,5.0,,,,,
 2026-09-05,FC,Free and Clear,5.0,0.0,5.0,5.0,4.0,2026-08-11
 2026-09-05,SD,Sugar Dew,5.0,-0.5,5.0,3.0,2.0,2026-08-10
@@ -51,7 +179,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-09-04,CZ,Signature Cozy,5.0,0.0,5.0,5.0,3.0,2026-08-20
 2026-09-04,AW,1 Pack,5.0,,,,,2026-08-25
 2026-09-04,CC,Central Coast,5.0,0.0,5.0,5.0,5.0,2026-08-26
-2026-09-04,MM,Malibu Mornings,5.0,0.0,5.0,5.0,3.0,2026-08-12
+2026-09-04,MM,Malibu Mornings,5.0,0.0,5.0,5.0,3.0,2026-09-09
 2026-09-04,AW,Alpine Woods,5.0,0.0,5.0,3.0,3.0,2026-09-04
 2026-09-04,GH,Golden Hour,5.0,-0.5,5.0,3.0,3.0,2026-09-04
 2026-09-04,SK,9 Pack Sample Kit,5.0,,,,,
@@ -197,7 +325,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-08-27,SK,9 Pack Sample Kit,5.0,,,,,
 2026-08-27,SD,Mozi Wash Detergent,5.0,,,,,2026-07-30
 2026-08-27,GH,Golden Hour,1.0,-1.0,3.0,3.0,5.0,2026-07-21
-2026-08-27,MM,Malibu Mornings,5.0,0.0,5.0,4.0,1.0,2026-07-11
+2026-08-27,MM,Malibu Mornings,5.0,0.0,5.0,4.0,1.0,2026-09-11
 2026-08-27,VM,Vanilla Moon,3.0,1.0,2.0,4.0,5.0,2026-08-17
 2026-08-27,CC,Central Coast,5.0,0.0,5.0,4.0,4.0,2026-07-22
 2026-08-27,SK,9 Pack Sample Kit,1.0,,,,,
@@ -263,7 +391,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-08-24,SD,Sugar Dew,5.0,0.0,5.0,4.0,5.0,2026-07-13
 2026-08-24,SK,9 Pack Sample Kit,5.0,,,,,
 2026-08-24,SK,9 Pack Sample Kit,5.0,,,,,
-2026-08-24,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0,2026-07-17
+2026-08-24,CZ,Signature Cozy,5.0,0.0,5.0,5.0,5.0,2026-09-10
 2026-08-24,FC,Free and Clear,5.0,0.0,3.0,5.0,4.0,2026-07-19
 2026-08-24,SK,9 Pack Sample Kit,5.0,,,,,
 2026-08-24,CC,Central Coast,5.0,0.0,5.0,5.0,5.0,2026-07-25
@@ -394,7 +522,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-08-14,MM,Malibu Mornings,5.0,0.0,5.0,5.0,5.0,2026-07-16
 2026-08-14,SK,9 Pack Sample Kit,5.0,,,,,
 2026-08-14,SK,9 Pack Sample Kit,4.0,,,,,
-2026-08-13,CC,Central Coast,5.0,0.0,5.0,5.0,5.0,2026-07-09
+2026-08-13,CC,Central Coast,5.0,0.0,5.0,5.0,5.0,2026-09-08
 2026-08-13,GH,Golden Hour,1.0,-1.0,3.0,4.0,4.0,2026-07-14
 2026-08-13,SK,9 Pack Sample Kit,5.0,,,,,
 2026-08-13,SK,9 Pack Sample Kit,5.0,,,,,
@@ -569,7 +697,7 @@ date,sku,scent_name,rating,scent_strength,scent_appeal,cleaning_power,cap_pourin
 2026-08-03,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,5.0,2026-08-08
 2026-08-03,SK,9 Pack Sample Kit,5.0,,,,,
 2026-08-03,HR,Hollywood Rouge,5.0,0.0,5.0,5.0,3.0,2026-07-05
-2026-08-03,GH,Golden Hour,5.0,0.0,5.0,5.0,3.0,2026-06-21
+2026-08-03,GH,Golden Hour,5.0,0.0,5.0,5.0,3.0,2026-09-12
 2026-08-03,SK,9 Pack Sample Kit,5.0,,,,,
 2026-08-03,SK,9 Pack Sample Kit,3.0,,,,,
 2026-08-03,MM,Malibu Mornings,5.0,0.0,5.0,5.0,5.0,2026-07-04
