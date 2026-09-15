@@ -373,21 +373,27 @@ with tab1:
     # Charts
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">Rating Trends Over Time</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Weekly average star rating per scent, by order date when matched. Toggle SKUs using the legend.</div>', unsafe_allow_html=True)
+    rating_view = st.radio("Granularity", ["Weekly", "Monthly"], horizontal=True, index=0, key='rating_trend_granularity')
+    st.markdown(f'<div class="section-sub">{rating_view} average star rating per scent, by order date when matched. Toggle SKUs using the legend.</div>', unsafe_allow_html=True)
 
-    # Weekly aggregation
+    # Weekly aggregation (also used by Scent Strength Trends below)
     df_ok_filt = df_ok[(df_ok['effective_date'].dt.date >= date_from) & (df_ok['effective_date'].dt.date <= date_to)].copy()
     df_ok_filt['week'] = df_ok_filt['effective_date'].dt.to_period('W').apply(lambda p: p.start_time)
-    weekly = (df_ok_filt.groupby(['week','sku'])
+
+    # Rating trend aggregation at the selected granularity
+    rating_freq = 'W' if rating_view == 'Weekly' else 'M'
+    rating_min_n = 2 if rating_view == 'Weekly' else 3  # months naturally pool more reviews
+    df_ok_filt['period'] = df_ok_filt['effective_date'].dt.to_period(rating_freq).apply(lambda p: p.start_time)
+    weekly = (df_ok_filt.groupby(['period','sku'])
               .agg(avg_rating=('rating','mean'), n=('rating','count'))
               .reset_index())
-    weekly = weekly[weekly['n'] >= 2]  # only show weeks with 2+ reviews
+    weekly = weekly[weekly['n'] >= rating_min_n]
     weekly['scent'] = weekly['sku'].map(SCENT_NAMES)
 
     fig_rating = px.line(
-        weekly, x='week', y='avg_rating', color='sku',
+        weekly, x='period', y='avg_rating', color='sku',
         color_discrete_map=SCENT_COLORS,
-        labels={'week':'Week','avg_rating':'Avg Rating','sku':'SKU'},
+        labels={'period': 'Week' if rating_view == 'Weekly' else 'Month', 'avg_rating':'Avg Rating','sku':'SKU'},
         markers=True,
     )
     fig_rating.update_layout(
@@ -404,18 +410,22 @@ with tab1:
     # Scent Strength trend
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">Scent Strength Trends</div>', unsafe_allow_html=True)
-    st.markdown('<div class="section-sub">Weekly average Scent Strength per scent. 0 = perfect, negative = too weak, positive = too strong.</div>', unsafe_allow_html=True)
+    ss_view = st.radio("Granularity", ["Weekly", "Monthly"], horizontal=True, index=0, key='ss_trend_granularity')
+    st.markdown(f'<div class="section-sub">{ss_view} average Scent Strength per scent. 0 = perfect, negative = too weak, positive = too strong.</div>', unsafe_allow_html=True)
 
+    ss_freq = 'W' if ss_view == 'Weekly' else 'M'
+    ss_min_n = 2 if ss_view == 'Weekly' else 3  # months naturally pool more reviews
+    df_ok_filt['ss_period'] = df_ok_filt['effective_date'].dt.to_period(ss_freq).apply(lambda p: p.start_time)
     weekly_ss = (df_ok_filt[df_ok_filt['scent_strength'].notna()]
-                 .groupby(['week','sku'])
+                 .groupby(['ss_period','sku'])
                  .agg(avg_ss=('scent_strength','mean'), n=('scent_strength','count'))
                  .reset_index())
-    weekly_ss = weekly_ss[weekly_ss['n'] >= 2]
+    weekly_ss = weekly_ss[weekly_ss['n'] >= ss_min_n]
 
     fig_ss = px.line(
-        weekly_ss, x='week', y='avg_ss', color='sku',
+        weekly_ss, x='ss_period', y='avg_ss', color='sku',
         color_discrete_map=SCENT_COLORS,
-        labels={'week':'Week','avg_ss':'Scent Strength','sku':'SKU'},
+        labels={'ss_period': 'Week' if ss_view == 'Weekly' else 'Month', 'avg_ss':'Scent Strength','sku':'SKU'},
         markers=True,
     )
     fig_ss.add_hline(y=0, line_dash='dash', line_color='#888', opacity=0.5, annotation_text='Perfect (0)')
